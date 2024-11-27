@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Львівська Хореографічна Школа "Грація"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Меню -->
+<nav id="menu">
+    <div class="logo">Грація</div>
+    <ul class="menu-items">
+        <li><a href="#about">Про Нас</a></li>
+        <li><a href="#gallery">Галерея</a></li>
+        <li><a href="#contact">Контакти</a></li>
+    </ul>
+    <div class="menu-toggle" id="menu-toggle">
+        <div class="hamburger"></div>
+    </div>
+</nav>
+
+<!-- Головне фото з великою назвою -->
+<header>
+    <div class="header-content">
+        <h1 class="main-title">Львівська Хореографічна Школа "Грація"</h1>
+        <p>Відкрийте світ танцю разом з нами</p>
+    </div>
+</header>
+
+<!-- Опис -->
+<section id="about">
+    <h2>Про Нас</h2>
+    <p>Хореографічна школа "Грація" – це місце, де кожен може навчитися мистецтву танцю. Наші професійні викладачі допоможуть вам розкрити свій потенціал.</p>
+</section>
+
+<!-- Галерея -->
+<section id="gallery">
+    <h2>Галерея</h2>
+    <div class="gallery-container">
+        <div class="slider">
+            <div class="slides">
+                <img src="images/photo1.jpg" alt="Танець 1">
+                <img src="images/photo2.jpg" alt="Танець 2">
+                <img src="images/photo3.jpg" alt="Танець 3">
+                <img src="images/photo4.jpg" alt="Танець 4">
+                <!-- Додайте більше зображень за потреби -->
+            </div>
+            <!-- Стрілки навігації -->
+            <div class="slider-nav">
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Контактна форма -->
+<section id="contact">
+    <h2>Зв'язатися з нами</h2>
+    <form id="contact-form">
+        <input type="text" name="name" placeholder="Ваше ім'я" required>
+        <input type="email" name="email" placeholder="Ваш Email" required>
+        <textarea name="message" placeholder="Ваше повідомлення" required></textarea>
+        <button type="submit">Надіслати</button>
+    </form>
+</section>
+
+<!-- Підключення JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
