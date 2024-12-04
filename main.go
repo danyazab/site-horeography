@@ -1,19 +1,32 @@
 package main
 
 import (
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"log"
-	"net/http"
+	"os"
 )
 
 func main() {
-	// Обслуговування статичних файлів з папки "static"
-	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/", fs)
+	// Ініціалізація Echo
+	e := echo.New()
 
-	// Запуск сервера на порті 8080
-	log.Println("Сервер запущено на http://localhost:8080")
-	err := http.ListenAndServe(":8080", nil)
-	if err != nil {
-		log.Fatal(err)
+	// Увімкнення middleware для логів
+	e.Use(middleware.Logger())
+	e.Use(middleware.Recover())
+
+	// Обслуговування статичних файлів з папки "static"
+	e.Static("/", "static")
+
+	// Визначення порту для Heroku або локального запуску
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // За замовчуванням
+	}
+
+	// Запуск сервера
+	log.Printf("Сервер запущено на http://localhost:%s", port)
+	if err := e.Start(":" + port); err != nil {
+		log.Fatal("Помилка запуску сервера:", err)
 	}
 }
