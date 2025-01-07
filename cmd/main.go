@@ -27,7 +27,7 @@ func main() {
 	tmpl = template.Must(template.ParseGlob(filepath.Join("..", "templates", "*.html")))
 
 	// Налаштовуємо статичні файли (CSS, JS, зображення тощо)
-	e.Static("/static", "static")
+	e.Static("/static", "../static")
 
 	// Реєструємо маршрути:
 	e.GET("/", homeHandler)
