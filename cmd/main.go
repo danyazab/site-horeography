@@ -24,7 +24,7 @@ func main() {
 	e.Use(middleware.Recover())
 
 	// Завантажуємо усі .html-шаблони з папки "templates"
-	tmpl = template.Must(template.ParseGlob(filepath.Join("templates", "*.html")))
+	tmpl = template.Must(template.ParseGlob(filepath.Join("..", "templates", "*.html")))
 
 	// Налаштовуємо статичні файли (CSS, JS, зображення тощо)
 	e.Static("/static", "static")
