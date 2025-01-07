@@ -1,0 +1,113 @@
+footer {
+    position: relative;
+    padding: 60px 0 100px;
+    margin: 5px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+footer::before,
+footer::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: url('/static/img/wave-footer.svg') no-repeat center bottom;
+    background-size: cover;
+    z-index: -1;
+}
+
+footer::before {
+    top: -1px;
+    transform: scaleX(-1);
+}
+
+footer::after {
+    bottom: 0;
+    transform: scaleX(-1) scaleY(-1);
+}
+
+.footer-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 20px;  /* Відступи з боків для мобільних */
+}
+
+.footer-left, .footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-right {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.footer-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-social-icon {
+    width: 30px;  /* Більший розмір іконок */
+    height: 30px;
+    transition: transform 0.3s ease;  /* Плавний ефект */
+}
+
+.footer-social-icon:hover {
+    transform: scale(1.2);  /* Збільшення при наведенні */
+}
+
+.footer-copy {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #555;
+    text-align: center;
+}
+
+/* --- Адаптивність для мобільних та планшетів --- */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;  /* Футер в колону */
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        gap: 15px;  /* Менший відступ між іконками */
+    }
+
+    .footer-social-icon {
+        width: 25px;  /* Менший розмір для мобільних */
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-copy {
+        font-size: 10px;
+    }
+
+    .footer-social-icon {
+        width: 20px;  /* Іконки ще менші на дуже вузьких екранах */
+        height: 20px;
+    }
+}

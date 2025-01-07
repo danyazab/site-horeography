@@ -1,0 +1,348 @@
+/* ========================= */
+/* Базові стилі, прелоадер  */
+/* ========================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ========================= */
+/* Шапка (header)           */
+/* ========================= */
+.main-header {
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+}
+
+.logo img {
+    max-height: 65px; /* Висота логотипу */
+}
+
+.main-nav {
+    position: relative;
+}
+
+/* ========================= */
+/* Головне меню (UL.menu)   */
+/* ========================= */
+.menu {
+    font-size: 20px;
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000;
+    white-space: nowrap;
+}
+
+/* Кнопки меню (.link) */
+.menu .link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.48s cubic-bezier(0.23,1,0.32,1);
+}
+
+/* Фіолетова "заливка" при hover */
+.menu .link::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #b19cd9;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.48s cubic-bezier(0.23,1,0.32,1);
+}
+.menu .link:hover::after {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+.menu .link:hover {
+    color: #fff;
+}
+
+/* Іконка (стрілочка) в кнопках */
+.menu .link svg {
+    width: 14px;
+    height: 14px;
+    fill: #000;
+    transition: all 0.48s cubic-bezier(0.23,1,0.32,1);
+}
+
+/* ========================= */
+/* Підменю (submenu)         */
+/* ========================= */
+.item.has-submenu {
+    position: relative;
+}
+
+.submenu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 108%;
+    width: 108%;
+    left: -8%;
+    padding-top: 2px;
+    border-radius: 0 0 16px 16px;
+    border: 8px solid #eeedf4;
+    background: #eeedf4;
+
+    /* Анімація відкриття підменю (0.48s) */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-30px);
+    transition: all 0.48s cubic-bezier(0.23,1,0.32,1);
+    z-index: 9998;
+}
+
+.submenu-item {
+    width: 100%;
+}
+
+.submenu-link {
+    display: block;
+    padding: 11px 1px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-size: 17px;
+    color: #555;
+    text-decoration: none;
+    transition: all 0.48s cubic-bezier(0.23,1,0.32,1);
+}
+
+/* Заливка під пункт підменю при hover */
+.submenu-link::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #b19cd9;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.48s cubic-bezier(0.23,1,0.32,1);
+}
+.submenu-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+.submenu-link:hover {
+    color: #fff;
+}
+
+/* Показ підменю на десктопах по hover */
+.item:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.item:hover .link {
+    color: #fff;
+    border-radius: 16px 16px 0 0;
+}
+.item:hover .link::after {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+.item:hover .link svg {
+    fill: #fff;
+    transform: rotate(-180deg);
+}
+
+/* ========================= */
+/* Кнопка "гамбургер" (mobile-menu-toggle) */
+/* ========================= */
+.mobile-menu-toggle {
+    display: none;
+    background: #b19cd9;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 30px; /* Символ ≡ */
+}
+
+/* ========================= */
+/* Адаптивні стилі           */
+/* ========================= */
+
+/* Для десктопу, тобто ширше 768px */
+@media (min-width: 769px) {
+    .submenu {
+        height: auto;
+        background: #eeedf4;         /* або свій колір */
+        border: 8px solid #eeedf4;   /* якщо треба обводку, як було раніше */
+        z-index: 9999;               /* переконайтеся, що підменю поверх контенту */
+    }
+}
+
+/* На планшетах (≤1024px) зменшуємо шрифт у меню та підменю */
+@media (max-width: 1024px) {
+    .menu,
+    .menu a,
+    .submenu-link {
+        font-size: 90%;
+    }
+    .menu {
+        gap: 15px;
+    }
+}
+
+/* ============================= */
+/* На телефонах (≤768px):        */
+/* Робимо side-drawer (виїзд)   */
+/* ============================= */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block; /* Показуємо кнопку гамбургер */
+    }
+
+    /* Приховуємо головне меню спочатку */
+    .menu {
+        /* [NEW] – робимо side-drawer, що виїжджає праворуч */
+        display: block;        /* щоб відпрацював width/height коректно */
+        position: fixed;       /* фіксуємо вікно меню */
+        top: 11%;
+        right: 0;
+        width: 250px;         /* ширина бічної панелі */
+        height: 100vh;        /* на всю висоту */
+        background: #fff;
+        box-shadow: -4px 0 8px rgba(0,0,0,0.1);
+        padding: 60px 20px;    /* відступ зверху — щоб не перекривало шапку */
+        transform: translateX(100%);  /* сховане за правим краєм */
+        transition: transform 0.3s ease-in-out;
+        z-index: 2000;
+        overflow-y: auto;      /* якщо пунктів багато, можна прокручувати */
+    }
+
+    /* При натисканні на гамбургер меню показується */
+    .menu.show {
+        transform: translateX(0); /* зрушуємо в нуль, і воно видно */
+    }
+
+    /* Скидаємо флексові стилі, робимо вертикальний список */
+    .menu li {
+        margin-bottom: 15px;
+    }
+    .menu li:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Кнопка-лінк - розтягуємо на 100% */
+    .menu .link {
+        justify-content: flex-start;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    /* Підменю робимо "акордеоном" – відкриватиметься по кліку */
+    .submenu {
+        position: static;
+        opacity: 1;       /* щоб була видима, але "закрита" за рахунок height */
+        visibility: visible;
+        transform: none;
+        border: none;
+        border-radius: 8px;
+        margin: 0;
+        padding-left: 20px; /* додамо відступ ліворуч */
+        background: #f9f9f9;
+        max-height: 0;      /* закрите підменю з нульовою висотою */
+        overflow: hidden;   /* приховуємо вміст за межами */
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    /* Пункти підменю - ліворуч, підрівнюємо шрифт і відступ */
+    .submenu-link {
+        text-align: left;
+        padding: 10px 0;
+        display: block;
+    }
+
+    .submenu.open {
+        /* При відкритті розгортаємо на повну висоту контенту */
+        max-height: 500px; /* або submenu.scrollHeight в JS */
+    }
+}
+
+/* ========================= */
+/* Приховування шапки при скролі */
+/* ========================= */
+.hide-header {
+    transform: translateY(-100%);
+}
+
+/* ========================= */
+/* Кнопка повернути меню (scroll-menu-btn) */
+/* ========================= */
+.scroll-menu-btn {
+    position: fixed;
+    top: 25px;
+    right: 10px;
+    z-index: 3000;
+    background: #b19cd9;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* ========================= */
+/* Анімація при скролі (Intersection Observer) */
+/* ========================= */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+.animate-on-scroll.visible {
+    opacity: 1;
+}

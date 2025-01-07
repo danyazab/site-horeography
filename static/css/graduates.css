@@ -1,0 +1,134 @@
+/* Контейнер для головного контенту */
+.graduates-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px;
+}
+
+/* Заголовок сторінки */
+.graduates-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    color: #2c2c2c;
+}
+
+/* Вступний блок */
+.intro-block {
+    margin-bottom: 1.5em;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Цитата / виділений блок */
+.highlight-quote {
+    position: relative;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-left: 5px solid #9b59b6; /* фіолетовий акцент */
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Загальні стилі для розділів із текстом */
+.graduates-description {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.section-heading {
+    font-size: 1.5rem;
+    margin: 1em 0 0.5em;
+    color: #9b59b6; /* фіолетовий або інший акцентний колір */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Список випускників у кілька колонок */
+.graduates-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    -moz-column-count: 3; /* Для Firefox */
+    -webkit-column-count: 3; /* Для Safari */
+    column-count: 3; /* Кількість колонок */
+    column-gap: 40px; /* Відстань між колонками */
+}
+/* Галерея з фотографіями */
+.graduates-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.photo-card {
+    overflow: hidden; /* якщо хочете приховувати частину фото */
+    border-radius: 8px; /* трохи заокруглити краї */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* легка тінь */
+    transition: transform 0.3s ease;
+}
+.photo-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* якщо у вас різні пропорції зображень */
+}
+.photo-card:hover {
+    transform: scale(1.5);
+}
+
+.graduates-list li {
+    margin-bottom: 0.5em;
+    font-size: 1rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Іконка/маркер замість звичайного bullet (за бажанням) */
+.graduates-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #9b59b6; /* акцентний колір */
+}
+
+/* Завершальний блок */
+.closing-text {
+    margin: 2em 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    text-align: justify;
+}
+
+/* Адаптивність */
+@media (max-width: 992px) {
+    .graduates-list ul {
+        column-count: 2;
+        column-gap: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .graduates-list ul {
+        column-count: 1;
+        column-gap: 0;
+    }
+}
+
+/* Приклад анімації на скрол, якщо у вас є Intersection Observer */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

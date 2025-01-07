@@ -1,0 +1,207 @@
+/* Весь блок "адміністрації": обмежуємо ширину і центруємо */
+.admin-team {
+    max-width: 1200px;   /* або інше, залежно від дизайну */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr; /* Спочатку одна колонка на мобільних */
+    gap: 30px;
+}
+
+/* Картка одного учасника */
+.admin-member {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    padding: 20px;
+    /* Зробимо вирівнювання в колонки (фото + текст) лише на ширших екранах */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+span.admin-more.hidden p, span.admin-more.hidden ul {
+    display: none;
+}
+/* Контейнер для фото */
+.admin-photo-wrap {
+    width: 100%;
+    text-align: center; /* щоб фото було по центру */
+}
+
+/* Саме зображення */
+.admin-photo {
+    width: 100%;         /* на всю ширину контейнера */
+    height: auto;        /* зберігаємо пропорції */
+    object-fit: contain; /* показати всю фотографію, без обрізання */
+    max-height: 400px;   /* чи 500px, щоб не було занадто високо */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Інформаційна частина */
+.admin-info {
+    padding: 20px;
+    flex: 1; /* забезпечує, що текстовий блок розтягується */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;}
+
+/* На ширших екранах робимо фото зліва, текст справа */
+@media (min-width: 768px) {
+    .admin-member {
+        flex-direction: row;   /* фото + текст в ряд */
+        align-items: flex-start;
+    }
+
+    .admin-photo-wrap {
+        flex-shrink: 0;       /* Щоб фото не стискалося, якщо тексту багато */
+        max-width: 300px;     /* Якщо хочете обмежити ширину */
+        margin-right: 20px;
+    }
+    .admin-photo {
+        max-height: 250px;
+    }
+    .admin-info {
+        padding: 15px;
+    }
+    .read-more-btn {
+        margin-top: auto; /* щоби кнопка "прилипала" внизу */
+    }
+}
+
+/**** admin.css ****/
+/*
+ * Стилі для сторінки «Адміністрація»
+ * Припустимо, що базові шрифти, кольори й класи container, animate-on-scroll
+ * визначені в інших файлах (header.css, main.css тощо).
+ * Тут лише додаємо/розширюємо стилі для розмітки admin-page.
+ */
+
+/* Основний контейнер сторінки */
+.admin-page {
+    /* Тут можна поставити відступи зверху/знизу, фон, якщо потрібно */
+    padding-top: 80px;
+    padding-bottom: 60px;
+    /* При потребі можна задати колір фону, схожий на основну сторінку */
+    /* background-color: #f8f4ff; */
+}
+
+/* Секція «Адміністрація» заголовок */
+.admin-hero {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f7f4fc; /* Ніжно-бузковий (у приклад) */
+    margin-bottom: 40px;
+}
+
+.admin-page-title {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.admin-page-subtitle {
+    font-size: 1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+
+/*@media (min-width: 768px) {*/
+/*    .admin-team {*/
+/*        grid-template-columns: 1fr 1fr; !* По дві картки в ряд на таблетах *!*/
+/*    }*/
+/*}*/
+/*@media (min-width: 1024px) {*/
+/*    .admin-team {*/
+/*        grid-template-columns: 1fr 1fr; !* Можна лишити 2 або зробити 3, як забажаєте *!*/
+/*    }*/
+/*}*/
+
+
+/*!* Обгортка для фото *!*/
+/*.admin-photo-wrap {*/
+/*    width: 100%;*/
+/*    overflow: hidden;*/
+/*    text-align: center;*/
+/*    background-color: #f0eef7; !* легкий відтінок, схожий на дизайн сайту *!*/
+/*}*/
+
+
+
+/* Ім'я та посада */
+.admin-name {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: #4d4d4d;
+}
+
+.admin-position {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 15px;
+    color: #888;
+}
+
+/* Основний опис */
+.admin-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Прихований або показаний текст */
+.admin-more {
+    display: inline-block;
+    /* transition, щоб робити плавне розгортання/згортання */
+    transition: all 0.3s ease;
+    opacity: 1;
+    max-height: 999px; /* тимчасово велике значення */
+    overflow: hidden;
+}
+.hidden {
+    /*display: none; !* найпростіший спосіб сховати *!*/
+    /* Якщо хочете плавне розгортання, використовуйте інший підхід:
+       opacity: 0; max-height: 0; overflow: hidden; etc.
+       Але тоді знадобиться JS для плавного ефекту.
+    */
+    opacity: 0; max-height: 0; overflow: hidden; etc.
+
+}
+
+/* Кнопка «Читати детальніше» */
+.read-more-btn {
+    align-self: flex-start; /* кнопка буде на початку блоку */
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #7c4db5; /* ваш фірмовий бузковий */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #67399a; /* трішки темніший відтінок */
+}
+
+/* Адаптивність: щоб на мобільних «картки» виглядали добре */
+@media (max-width: 767px) {
+    .admin-member {
+        flex-direction: column;
+    }
+    .admin-photo {
+        max-height: 250px;
+    }
+    .admin-info {
+        padding: 15px;
+    }
+    .read-more-btn {
+        margin-top: auto; /* щоби кнопка "прилипала" внизу */
+    }
+}

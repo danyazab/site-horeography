@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Львівська Державна Хореографічна Школа"/>
+    <title>{{.SchoolName}} – Підтримка школи</title>
+
+    <!-- Підключення наявних CSS (або додайте новий файл) -->
+    <link rel="stylesheet" href="/static/css/header.css"/>
+    <link rel="stylesheet" href="/static/css/hero.css"/>
+    <link rel="stylesheet" href="/static/css/footer.css"/>
+    <link rel="stylesheet" href="/static/css/main.css"/>
+    <link rel="stylesheet" href="/static/css/support.css" />
+    <link rel="stylesheet" href="/static/css/admin.css" />
+
+
+
+    <!-- Сюди ж додайте ваш скрипт main.js, якщо потрібна анімація при скролі і т.д. -->
+    <script src="/static/js/main.js" defer></script>
+</head>
+<body>
+<!-- Прелоадер (за потреби) -->
+<div class="preloader">
+    <div class="preloader-content">
+        <!-- Ваш SVG або інший лоадер -->
+        <svg height="108px" width="108px" viewBox="0 0 128 128" class="loader">
+            <!-- ... -->
+        </svg>
+    </div>
+</div>
+
+<!-- Шапка сайту (header) – без змін -->
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo">
+            <img src="/static/img/logo.png" alt="Логотип"/>
+        </div>
+        <nav class="main-nav">
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">≡</button>
+            <ul class="menu">
+                <li class="item has-submenu">
+                    <a href="/" class="link">
+                        <span>Про школу</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 15l-8-8h16z"></path></svg>
+                    </a>
+                    <div class="submenu">
+                        <div class="submenu-item"><a href="#" class="submenu-link">Історія школи</a></div>
+                        <div class="submenu-item"><a href="#" class="submenu-link">Структурні підрозділи</a></div>
+                        <div class="submenu-item"><a href="/administration" class="submenu-link">Адміністрація</a></div>
+                        <div class="submenu-item"><a href="#" class="submenu-link">Наші випускники</a></div>
+                        <div class="submenu-item"><a href="/support" class="submenu-link">Підтримка школи</a></div>
+                    </div>
+                </li>
+                <li class="item has-submenu">
+                    <a href="#" class="link">
+                        <span>Навчальний процес</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 15l-8-8h16z"></path></svg>
+                    </a>
+                    <div class="submenu">
+                        <div class="submenu-item"><a href="#" class="submenu-link">Освітня програма</a></div>
+                        <div class="submenu-item"><a href="#" class="submenu-link">Вартість навчання</a></div>
+                        <div class="submenu-item"><a href="#" class="submenu-link">Вимоги до вступу</a></div>
+                    </div>
+                </li>
+                <li class="item"><a href="#" class="link"><span>Галерея</span></a></li>
+                <li class="item"><a href="#" class="link"><span>Новини</span></a></li>
+                <li class="item"><a href="#" class="link"><span>Контакти</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Кнопки та оверлей для мобільного меню -->
+<button class="scroll-menu-btn">☰</button>
+<div class="menu-overlay"></div>
+<button class="scroll-menu-btn">↑</button>
+
+<main class="admin-page animate-on-scroll">
+    <!-- Заголовок/опис сторінки -->
+    <section class="admin-hero">
+        <div class="container">
+            <h1 class="admin-page-title">Підтримка школи</h1>
+            <p class="admin-page-subtitle">
+                Будь-який внесок, незалежно від його розміру, допоможе нам продовжувати нашу місію –
+                виховувати нові покоління талановитих танцюристів. Долучайтесь!
+            </p>
+        </div>
+    </section>
+
+    <!-- Основний текст -->
+    <section class="support-content container">
+        <div class="support-text-block fancy-text-block">
+            <p>
+                Наша школа постійно прагне вдосконалюватися, щоб забезпечити найвищий рівень навчання для своїх учнів.
+                Ми віримо, що кожна дитина заслуговує на найкращі умови для розвитку свого таланту і здобуття професійних
+                навичок у танці. Однак, досягти цього самотужки надзвичайно складно. <strong>Ваша підтримка</strong> є
+                надзвичайно важливою для нас.
+            </p>
+            <p>
+                Завдяки спонсорській допомозі та благодійним внескам, ми можемо оновлювати матеріально-технічну базу,
+                придбавати нове обладнання, костюми та забезпечувати участь наших учнів у національних та міжнародних
+                конкурсах.
+            </p>
+            <p>
+                Будь-який внесок, незалежно від його розміру, допоможе нам продовжувати нашу місію –
+                виховувати нові покоління талановитих танцюристів. Долучайтесь!
+            </p>
+        </div>
+
+        <!-- Блок із зображенням (QR-код ПриватБанк) -->
+        <div class="support-image-block">
+            <!-- Замість шляху /static/img/qr-privat.jpg поставте оригінальну назву та шлях до файлу -->
+            <img src="/static/img/support/privat_qr.jpg" alt="QR-код для внесків" class="support-image"/>
+        </div>
+    </section>
+
+    <!-- Додаткова інформація: рахунок -->
+    <section class="bank-details">
+        <div class="bank-details-inner">
+            <h2 class="bank-details-title">Благодійний рахунок:</h2>
+            <p class="bank-details-number">
+                <strong>UA788201720314241003301022099</strong>
+            </p>
+            <p class="bank-details-destination">
+                призначення платежу: <em>«добровільний грошовий внесок»</em>
+            </p>
+        </div>
+    </section>
+</main>
+
+<!-- Футер сайту (footer) – без змін -->
+<footer class="animate-on-scroll">
+    <div class="footer-content">
+        <div class="footer-left">
+            <div class="footer-item"></div>
+            <div class="footer-item"></div>
+            <div class="footer-item">
+                <img src="/static/img/socials/phone.svg" alt="Телефон" class="footer-icon"/>
+                <span>{{.Phone1}}</span>
+                <span>{{.Phone2}}</span>
+            </div>
+            <div class="footer-item">
+                <img src="/static/img/socials/mail.svg" alt="Email" class="footer-icon"/>
+                <a href="{{.EmailURL}}">ballet.school.lviv@ukr.net</a>
+            </div>
+            <div class="footer-item">
+                <img src="/static/img/socials/location.svg" alt="Адреса" class="footer-icon"/>
+                <span>{{.Address}}</span>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="https://www.facebook.com/Lviv.State.Choreographic.School/?locale=uk_UA" target="_blank" rel="noopener" class="social-link">
+                <img src="/static/img/socials/facebook-icon.svg" alt="Facebook" class="footer-social-icon"/>
+            </a>
+            <a href="https://www.instagram.com/lvivballetschool/" target="_blank" rel="noopener" class="social-link">
+                <img src="/static/img/socials/instagram-icon.svg" alt="Instagram" class="footer-social-icon"/>
+            </a>
+        </div>
+    </div>
+    <div class="footer-copy">
+        © Державна Хореографічна Школа. Всі права захищено.
+    </div>
+</footer>
+
+</body>
+</html>

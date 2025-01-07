@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Львівська Державна Хореографічна Школа" />
+    <title>{{.SchoolName}} – Адміністрація</title>
+
+    <!-- Підключення базових стилів (ваших), наприклад -->
+    <link rel="stylesheet" href="/static/css/header.css" />
+    <link rel="stylesheet" href="/static/css/hero.css" />
+    <link rel="stylesheet" href="/static/css/about.css" />
+    <link rel="stylesheet" href="/static/css/advantages.css" />
+    <link rel="stylesheet" href="/static/css/contact.css" />
+    <link rel="stylesheet" href="/static/css/footer.css" />
+    <link rel="stylesheet" href="/static/css/main.css" />
+
+    <!-- Підключення стилів сторінки "Адміністрація" -->
+    <link rel="stylesheet" href="/static/css/admin.css" />
+
+    <!-- JS (при потребі) -->
+    <script src="/static/js/main.js" defer></script>
+</head>
+<body>
+<!-- Прелоадер (якщо використовується) -->
+<div class="preloader">
+    <div class="preloader-content">
+        <!-- SVG-лоадер -->
+        <svg height="108px" width="108px" viewBox="0 0 128 128" class="loader">
+            <!-- ...вміст вашого лоадера... -->
+        </svg>
+    </div>
+</div>
+
+<!-- Шапка сайту (header) -->
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo">
+            <img src="/static/img/logo.png" alt="Логотип"/>
+        </div>
+        <nav class="main-nav">
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">≡</button>
+            <ul class="menu">
+                <li class="item has-submenu">
+                    <a href="/" class="link">
+                        <span>Про школу</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 15l-8-8h16z"></path></svg>
+                    </a>
+                    <div class="submenu">
+                        <div class="submenu-item"><a href="#" class="submenu-link">Історія школи</a></div>
+                        <div class="submenu-item"><a href="#" class="submenu-link">Структурні підрозділи</a></div>
+                        <div class="submenu-item"><a href="#" class="submenu-link">Адміністрація</a></div>
+                        <div class="submenu-item"><a href="#" class="submenu-link">Наші випускники</a></div>
+                        <div class="submenu-item"><a href="/support" class="submenu-link">Підтримка школи</a></div>
+                    </div>
+                </li>
+                <li class="item has-submenu">
+                    <a href="#" class="link">
+                        <span>Навчальний процес</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 15l-8-8h16z"></path></svg>
+                    </a>
+                    <div class="submenu">
+                        <div class="submenu-item"><a href="#" class="submenu-link">Освітня програма</a></div>
+                        <div class="submenu-item"><a href="#" class="submenu-link">Вартість навчання</a></div>
+                        <div class="submenu-item"><a href="#" class="submenu-link">Вимоги до вступу</a></div>
+                    </div>
+                </li>
+                <li class="item"><a href="#" class="link"><span>Галерея</span></a></li>
+                <li class="item"><a href="#" class="link"><span>Новини</span></a></li>
+                <li class="item"><a href="#" class="link"><span>Контакти</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Кнопки для мобільного меню (якщо використовуються) -->
+<button class="scroll-menu-btn">☰</button>
+<div class="menu-overlay"></div>
+<button class="scroll-menu-btn">↑</button>
+
+<!-- ГОЛОВНИЙ КОНТЕНТ (Сторінка «Адміністрація») -->
+<main class="admin-page animate-on-scroll">
+    <!-- Заголовок/опис сторінки -->
+    <section class="admin-hero">
+        <div class="container">
+            <h1 class="admin-page-title">Адміністрація</h1>
+            <p class="admin-page-subtitle">
+                Знайомтесь із командою, яка забезпечує ефективну роботу нашої школи та піклується про високі стандарти навчання.
+            </p>
+        </div>
+    </section>
+
+    <!-- Картки з інформацією про адміністрацію -->
+    <section class="admin-team">
+        <!-- 1-а особа -->
+        <article class="admin-member">
+            <div class="admin-photo-wrap">
+                <img
+                        src="/static/img/admin/member1.jpg"
+                        alt="Фото адміністратора 1"
+                        class="admin-photo" />
+            </div>
+            <div class="admin-info">
+                <h2 class="admin-name">Рижий Віталій Миколайович</h2>
+                <h3 class="admin-position">Директор Львівської хореографічної школи</h3>
+                <p class="admin-description">
+                    З жовтня 2022 року Віталій Миколайович обіймає посаду директора Львівської хореографічної школи. Його багатий досвід, наполеглива щоденна праця та відданість хореографії допомагають розвивати нашу школу та виховувати нові покоління танцівників.
+                <div class="admin-more hidden">
+        <p>
+            Віталій Миколайович Рижий розпочав свою освіту в Кам’янець-Подільському училищі культури, яке закінчив у 1993 році за спеціальністю "хореографія". У 1993-1994 роках проходив строкову військову службу в ансамблі пісні і танцю Прикарпатського військового округу. Після цього, до 1996 року, працював солістом балету в цьому ж ансамблі, де здобув свій перший професійний досвід.
+        </p>
+        <p>
+            З 1996 по 2022 рік Віталій Миколайович був солістом Львівського національного театру опери та балету ім. С. Крушельницької. За цей час виконав численні ролі у відомих балетах, зокрема:
+        </p>
+        <ul>
+            <li>Принц Зігфрід, па-де-труа — «Лебедине озеро» П. Чайковського</li>
+            <li>Принц, Дроссельмейєр — «Лускунчик» П. Чайковського</li>
+            <li>Солор, Божок — «Баядерка» Л. Мінкуса</li>
+            <li>Альберт, Ганс — «Жізель» А. Адана</li>
+            <li>Франц, Коппеліус — «Коппелія» Л. Деліба</li>
+            <li>Степан, Князь — «Лілея» К. Данькевича</li>
+            <li>Адам, Чорт — «Створення світу» А. Петрова</li>
+            <li>Клод, монстри — «Есмеральда» Ц. Пуньї</li>
+            <li>Ромео, Тібальд — «Ромео і Джульєтта» С. Прокоф’єва</li>
+            <li>Леонардо — «Повернення Батерфляй» Д. Пуччіні — М. Скорика</li>
+            <li>Вакх, Паріс — балетна сцена «Вальпургієва ніч» Ш. Гуно</li>
+            <li>Хосе, Цуніга — «Кармен-сюїта» Ж. Бізе-Р. Щедріна</li>
+            <li>Паоло — «Франческа да Ріміні» П. Чайковського</li>
+            <li>Еспадо, «Болеро», Гамаш, Батько — «Дон Кіхот» Л. Мінкуса</li>
+            <li>Ахмет, начальник варти — «Корсар» А. Адан</li>
+            <li>Мішо — «Даремна обережність» П. Гендель</li>
+        </ul>
+        <p>
+            Віталій Миколайович отримав також вищу хореографічну освіту у Рівненському державному гуманітарному університеті, який закінчив у 2004 році. Його талант та майстерність були визнані, і в 2004 році він став лауреатом премії ім. А. Ф. Шикера.
+        </p>
+        <p>
+            З 2014 по 2022 рік він також виконував обов’язки інспектора балету, що додало йому управлінського досвіду.
+        </p>
+        <p>
+            Віталій Миколайович брав участь у гастролях в таких країнах, як Німеччина, Польща, Швейцарія, Австрія, Франція та Іспанія, де представляв українське балетне мистецтво на міжнародному рівні.
+        </p>
+            </div>
+                </p>
+                <button class="read-more-btn">Читати детальніше</button>
+
+            </div>
+        </article>
+
+        <!-- 2-а особа -->
+        <article class="admin-member">
+            <div class="admin-photo-wrap">
+                <img
+                        src="/static/img/admin/member2.jpg"
+                        alt="Фото адміністратора 2"
+                        class="admin-photo" />
+            </div>
+            <div class="admin-info">
+                <h2 class="admin-name">Дворська Зоряна Євгенівна</h2>
+                <h3 class="admin-position">Заступник директора з навчально-виховної роботи, викладач класичного танцю</h3>
+                <p class="admin-description">
+                    Багаторічний досвід та професіоналізм роблять Зоряну Євгенівну незамінною частиною нашого колективу. Вона передає свій досвід і знання новому поколінню танцівників, виховуючи в них любов до мистецтва і прагнення до досконалості.
+                <div class="admin-more hidden">
+<p>
+    Її шлях у мистецтві танцю розпочався у 1999 році, коли вона успішно закінчила Львівську хореографічну школу.
+</p>
+<p>
+    Подальшу освіту Зоряна Євгенівна продовжила у Львівському фаховому коледжі культури і мистецтв, де у 2004 році завершила навчання на відділенні класичної хореографії.
+</p>
+<p>
+  З 1999 по 2020 рік працювала артисткою балету у Львівському театрі опери та балету ім. С. Крушельницької, де виконала безліч яскравих ролей і здобула багатий сценічний досвід.
+</p>
+<p>
+    У 2007 році вона здобула юридичну освіту, закінчивши Львівський національний університет ім. І. Франка. Це надало їй додаткових знань та навичок, що також сприяють її професійній діяльності.
+</p>
+<p>
+   У 2016 році Зоряна Євгенівна отримала вищу педагогічну освіту за спеціальністю "хореографія" у Дрогобицькому педагогічному університеті ім. І. Франка. Це дозволило їй поєднувати артистичну діяльність із педагогічною роботою.
+</p>
+                        </div>
+                </p>
+                <button class="read-more-btn">Читати детальніше</button>
+            </div>
+        </article>
+
+        <!-- 3-я особа -->
+        <article class="admin-member">
+            <div class="admin-photo-wrap">
+                <img
+                        src="/static/img/admin/member3.jpg"
+                        alt="Фото адміністратора 3"
+                        class="admin-photo" />
+            </div>
+            <div class="admin-info">
+                <h2 class="admin-name">Трепліна Алла Святославівна</h2>
+                <h3 class="admin-position">Завідувачка відділу концертмейстерства та музично-теоретичних дисциплін, концертмейстер вищої категорії, викладач-методист з фортепіано та музично-теоретичних дисциплін.</h3>
+                <p class="admin-description">
+                    Алла Святославівна постійно працює над удосконаленням навчального процесу, впроваджуючи нові методики та підходи, що роблять її заняття цікавими, інформативними та надихаючими для учнів.
+                    Вона є справжнім взірцем для молодих педагогів, які прагнуть продовжувати традиції музичної освіти на високому професійному рівні.
+                    <div class="admin-more hidden">
+<p>
+    Народилася в 1958 році. Закінчила Львівське державне музичне училище в 1978 році та Львівську державну консерваторію ім. М. Лисенка у 1983 році, здобувши фах музикознавця, лектора та викладача музично-теоретичних дисциплін.
+</p>
+<p>
+    Протягом навчання в консерваторії, Алла Святославівна проявила себе як талановита студентка, яка прагнула глибокого розуміння музичного мистецтва та його історії.
+</p>
+<p>
+    З 1988 року працює у Львівській хореографічній школі, де стала одним з провідних фахівців своєї галузі.
+</p>
+<p>
+    Завдяки своїй любові до музики та відданості педагогічній справі, вона виховала численних учнів, які продовжують традиції музичної освіти.
+</p>
+<p>
+    Її професіоналізм, чуйність і педагогічна майстерність здобули повагу серед колег і студентів.
+</p>
+                        </div>
+                </p>
+                <button class="read-more-btn">Читати детальніше</button>
+            </div>
+        </article>
+
+        <!-- 4-а особа -->
+        <article class="admin-member">
+            <div class="admin-photo-wrap">
+                <img
+                        src="/static/img/admin/member4.jpg"
+                        alt="Фото адміністратора 4"
+                        class="admin-photo" />
+            </div>
+            <div class="admin-info">
+                <h2 class="admin-name">Смут Наталія Михайлівна</h2>
+                <h3 class="admin-position">Завідувач відділу хореографії, викладач хореографічних дисциплін</h3>
+                <p class="admin-description">
+                    Як балетмейстер та постановник танцювальних номерів, створила багато хореографічних композицій, які вражають своєю оригінальністю та майстерністю виконання. Її постановки захоплюють своєю креативністю та глибиною емоційного змісту.
+                    <div class="admin-more hidden">
+<p>
+    Є випускницею Львівської хореографічної школи, де заклала основи своєї професійної кар'єри у хореографії.
+    Після закінчення школи продовжила навчання у Львівському коледжі культури і мистецтв, де здобула фундаментальні знання та навички у сфері хореографії.
+</p>
+<p>
+    Для подальшого вдосконалення своїх професійних вмінь, закінчила Академію керівних кадрів культури і мистецтв в Києві,
+    де отримала диплом у галузі культурного менеджменту та хореографії.
+</p>
+<p>
+    Активна організаторка підготовки учнів до участі у всеукраїнських та міжнародних конкурсах і фестивалях.
+</p>
+<p>
+    Відзначається високим рівнем відповідальності, організованості та доброзичливості.
+    Вміє знаходити підхід до кожного учня, створюючи теплу і надихаючу атмосферу для навчання та творчості.
+</p>
+                        </div>
+                </p>
+                <button class="read-more-btn">Читати детальніше</button>
+            </div>
+        </article>
+    </section>
+</main>
+
+<!-- Футер сайту -->
+<footer class="animate-on-scroll">
+    <div class="footer-content">
+        <div class="footer-left">
+            <div class="footer-item"></div>
+            <div class="footer-item"></div>
+            <div class="footer-item">
+                <img src="/static/img/socials/phone.svg" alt="Телефон" class="footer-icon"/>
+                <span>{{.Phone1}}</span>
+                <span>{{.Phone2}}</span>
+            </div>
+            <div class="footer-item">
+                <img src="/static/img/socials/mail.svg" alt="Email" class="footer-icon"/>
+                <a href="{{.EmailURL}}">ballet.school.lviv@ukr.net</a>
+            </div>
+            <div class="footer-item">
+                <img src="/static/img/socials/location.svg" alt="Адреса" class="footer-icon"/>
+                <span>{{.Address}}</span>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="https://www.facebook.com/Lviv.State.Choreographic.School/?locale=uk_UA" target="_blank" rel="noopener" class="social-link">
+                <img src="/static/img/socials/facebook-icon.svg" alt="Facebook" class="footer-social-icon"/>
+            </a>
+            <a href="https://www.instagram.com/lvivballetschool/" target="_blank" rel="noopener" class="social-link">
+                <img src="/static/img/socials/instagram-icon.svg" alt="Instagram" class="footer-social-icon"/>
+            </a>
+        </div>
+    </div>
+    <div class="footer-copy">
+        © Державна Хореографічна Школа. Всі права захищено.
+    </div>
+</footer>
+
+<!-- JS для кнопок "Читати детальніше" -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const readMoreButtons = document.querySelectorAll('.read-more-btn');
+        readMoreButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const moreText = this.parentElement.querySelector('.admin-more');
+                if (moreText.classList.contains('hidden')) {
+                    moreText.classList.remove('hidden');
+                    this.textContent = 'Згорнути';
+                } else {
+                    moreText.classList.add('hidden');
+                    this.textContent = 'Читати детальніше';
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

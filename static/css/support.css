@@ -1,0 +1,192 @@
+/* =================================
+   Загальні стилі сторінки «Підтримка школи»
+   ================================= */
+.support-page {
+    /* За потреби можна додати якийсь фон */
+     background-color: #f7f7f7;
+    padding-bottom: 60px;
+}
+
+/* =================================
+   Базові заголовки та підзаголовки
+   ================================= */
+.support-page-title {
+    font-size: 2.5rem;
+    margin: 1.5rem 0 0.5rem;
+    text-align: center;
+    animation: fadeInUp 1s ease forwards; /* Анімація під час завантаження */
+}
+
+.support-page-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    animation: fadeInUp 1.2s ease forwards;
+    opacity: 0; /* Початок з прозорості */
+}
+
+.support-image-block {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.support-image-block .support-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* =================================
+   Секція з банківськими реквізитами
+   ================================= */
+.bank-details {
+    background-color: #f7f4fc;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    animation: fadeInUp 1.6s ease forwards;
+    opacity: 0;
+}
+
+.bank-details-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.bank-details-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.bank-details-number {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.bank-details-destination {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* =================================
+   Адаптивність (Media Queries)
+   ================================= */
+/* Планшети та менші пристрої */
+@media (max-width: 992px) {
+    .support-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .support-text-block, .support-image-block {
+        flex: none;
+        width: 100%;
+    }
+    .support-image-block .support-image {
+        max-width: 70%;
+    }
+}
+
+/* Телефони */
+@media (max-width: 576px) {
+    .support-page-title {
+        font-size: 2rem;
+    }
+    .support-page-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .support-image-block .support-image {
+        max-width: 70%;
+    }
+}
+/* Контейнер сайту (якщо ще не задано) */
+.container {
+    max-width: 1200px;  /* або 1000px, див. що зручніше */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Основний блок із текстом та QR-кодом */
+.support-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    /* Можна додати легку анімацію при появі: */
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Текстовий блок */
+.support-text-block {
+    flex: 0 0 55%;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Налаштування абзаців */
+.support-text-block p {
+    margin-bottom: 1rem;
+    text-align: justify; /* або left, як вам більше подобається */
+}
+
+.support-text-block strong {
+    color: #131111; /* виділяємо ключові слова */
+}
+
+/* Блок із зображенням */
+.support-image-block {
+    flex: 0 0 55%;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.support-image-block img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* якщо хочете злегка заокруглити кути */
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .support-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .support-text-block,
+    .support-image-block {
+        flex: 0 0 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .support-image-block {
+        margin-top: 1.5rem; /* відступ між блоками */
+    }
+}
+
+/* Приклад анімації */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

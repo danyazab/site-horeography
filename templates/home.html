@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Львівська Державна Хореографічна Школа"/>
+    <title>{{.SchoolName}}</title>
+    <link rel="stylesheet" href="/static/css/header.css"/>
+    <link rel="stylesheet" href="/static/css/hero.css"/>
+    <link rel="stylesheet" href="/static/css/about.css"/>
+    <link rel="stylesheet" href="/static/css/advantages.css"/>
+    <link rel="stylesheet" href="/static/css/contact.css"/>
+    <link rel="stylesheet" href="/static/css/footer.css"/>
+    <link rel="stylesheet" href="/static/css/main.css"/>
+    <script src="/static/js/main.js" defer></script>
+</head>
+<body>
+<div class="preloader">
+    <div class="preloader-content">
+        <!-- Loader SVG -->
+        <svg height="108px" width="108px" viewBox="0 0 128 128" class="loader">
+            <!-- Вміст лоадера -->
+            <defs>
+                <clipPath id="loader-eyes">
+                    <circle transform="rotate(-40,64,64) translate(0,-56)" r="8" cy="64" cx="64"></circle>
+                    <circle transform="rotate(40,64,64) translate(0,-56)" r="8" cy="64" cx="64"></circle>
+                </clipPath>
+                <linearGradient y2="1" x2="0" y1="0" x1="0" id="loader-grad">
+                    <stop stop-color="#000" offset="0%"></stop>
+                    <stop stop-color="#fff" offset="100%"></stop>
+                </linearGradient>
+                <mask id="loader-mask">
+                    <rect fill="url(#loader-grad)" height="128" width="128" y="0" x="0"></rect>
+                </mask>
+            </defs>
+            <g stroke-dasharray="175.93 351.86" stroke-width="12" stroke-linecap="round">
+                <g>
+                    <rect clip-path="url(#loader-eyes)" height="64" width="128" fill="hsl(193,90%,50%)"></rect>
+                    <g stroke="hsl(193,90%,50%)" fill="none">
+                        <circle transform="rotate(180,64,64)" r="56" cy="64" cx="64"></circle>
+                        <circle transform="rotate(0,64,64)" r="56" cy="64" cx="64"></circle>
+                    </g>
+                </g>
+                <g mask="url(#loader-mask)">
+                    <rect clip-path="url(#loader-eyes)" height="64" width="128" fill="hsl(223,90%,50%)"></rect>
+                    <g stroke="hsl(223,90%,50%)" fill="none">
+                        <circle transform="rotate(180,64,64)" r="56" cy="64" cx="64"></circle>
+                        <circle transform="rotate(0,64,64)" r="56" cy="64" cx="64"></circle>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </div>
+</div>
+
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo">
+            <!-- Логотип -->
+            <img src="/static/img/logo.png" alt="Логотип" />
+        </div>
+        <nav class="main-nav">
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">≡</button>
+
+            <ul class="menu">
+                <li class="item has-submenu">
+                    <a href="#" class="link">
+                        <span>Про школу</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 15l-8-8h16z"></path></svg>
+                    </a>
+                    <div class="submenu">
+                        <div class="submenu-item"><a href="#" class="submenu-link">Історія школи</a></div>
+                        <div class="submenu-item"><a href="#" class="submenu-link">Структурні підрозділи</a></div>
+                        <div class="submenu-item"><a href="/administration" class="submenu-link">Адміністрація</a></div>
+                        <div class="submenu-item"><a href="/graduates" class="submenu-link">Наші випускники</a></div>
+                        <div class="submenu-item"><a href="/support" class="submenu-link">Підтримка школи</a></div>
+                    </div>
+                </li>
+                <li class="item has-submenu">
+                    <a href="#" class="link">
+                        <span>Навчальний процес</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 15l-8-8h16z"></path></svg>
+                    </a>
+                    <div class="submenu">
+                        <div class="submenu-item"><a href="#" class="submenu-link">Освітня програма</a></div>
+                        <div class="submenu-item"><a href="#" class="submenu-link">Вартість навчання</a></div>
+                        <div class="submenu-item"><a href="#" class="submenu-link">Вимоги до вступу</a></div>
+                    </div>
+                </li>
+                <li class="item"><a href="#" class="link"><span>Галерея</span></a></li>
+                <li class="item"><a href="#" class="link"><span>Новини</span></a></li>
+                <li class="item"><a href="#" class="link"><span>Контакти</span></a></li>
+            </ul>
+        </nav>
+<!--        <button class="mobile-menu-toggle">☰</button>-->
+    </div>
+</header>
+
+<button class="scroll-menu-btn">☰</button>
+<!-- Напівпрозорий оверлей для мобільного меню -->
+<div class="menu-overlay"></div>
+
+<!-- Кнопка повернення меню, коли шапка схована -->
+<button class="scroll-menu-btn">↑</button>
+
+<section class="hero animate-on-scroll">
+    <div class="slider-container">
+        <div class="slide fade" style="background-image: url('/static/img/dancer1.jpg');"></div>
+        <div class="slide fade" style="background-image: url('/static/img/dancer2.jpg');"></div>
+        <div class="slide fade" style="background-image: url('/static/img/dancer3.jpg');"></div>
+        <div class="slide fade" style="background-image: url('/static/img/dancer4.jpg');"></div>
+    </div>
+    <div class="hero-text">
+        <h1>{{.SchoolName}}</h1>
+        <p>{{.Quote}}</p>
+    </div>
+</section>
+
+<section class="about-goal animate-on-scroll">
+    <div class="container">
+        <h2 class="goal-title">Наша мета</h2>
+        <img src="/static/img/ballerina.png" alt="Балерина" class="goal-image"/>
+        <h3 class="goal-subtitle">Сприяння всебічному розвитку кожного учня</h3>
+        <p class="goal-text">
+            Ми пропонуємо всебічну підготовку, поєднуючи класичну балетну техніку з сучасними танцювальними стилями, що дозволяє нашим учням розвивати не лише фізичні, але й творчі здібності. Наші учні не лише опановують складну танцювальну техніку, але й вчаться працювати в команді, виступати на сцені та досягати поставлених цілей, що є незамінним досвідом для їхнього майбутнього. Заняття балетом з нами сформують у вашої дитини дисципліну, витривалість, почуття ритму та артистизм, що є важливими навичками для будь-якої життєвої сфери.
+        </p>
+    </div>
+</section>
+
+<section class="advantages animate-on-scroll">
+    <div class="container">
+        <h2>Чому обирають нашу школу?</h2>
+        <div class="advantages-grid">
+            <div class="adv-item animate-on-scroll">
+                <span class="adv-icon">📚</span>
+                <h3>Комплексний підхід</h3>
+                <p>Ми пропонуємо всебічну підготовку, поєднуючи класичну балетну техніку з сучасними танцювальними стилями, що дозволяє нашим учням розвивати не лише фізичні, але й творчі здібності.</p>
+            </div>
+            <div class="adv-item animate-on-scroll">
+                <span class="adv-icon">💃</span>
+                <h3>Розвиток складної техніки</h3>
+                <p>Наші учні не лише опановують складну танцювальну техніку, але й вчаться працювати в команді, виступати на сцені та досягати поставлених цілей.</p>
+            </div>
+            <div class="adv-item animate-on-scroll">
+                <span class="adv-icon">🤝</span>
+                <h3>Командна робота</h3>
+                <p>Ми навчаємо дітей ефективно співпрацювати, що є незамінним досвідом для їхнього майбутнього.</p>
+            </div>
+            <div class="adv-item animate-on-scroll">
+                <span class="adv-icon">🎭</span>
+                <h3>Розвиток дисципліни та витривалості</h3>
+                <p>Заняття балетом з нами сформують у вашої дитини дисципліну, витривалість, почуття ритму та артистизм.</p>
+            </div>
+            <div class="adv-item animate-on-scroll">
+                <span class="adv-icon">🌟</span>
+                <h3>Незамінний досвід для майбутнього</h3>
+                <p>Танці допомагають дітям відчути впевненість у собі та розвинути навички, які будуть корисними в житті.</p>
+            </div>
+            <div class="adv-item animate-on-scroll">
+                <span class="adv-icon">🏆</span>
+                <h3> Підготовка до успіху</h3>
+                <p>Наші учні досягають високих результатів у танцювальних конкурсах та стають впевненими у власних силах.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-form-section animate-on-scroll contact-with-wave">
+    <div class="container">
+        <h2>Зв’язатися з нами</h2>
+
+        <form id="contact-form" method="POST" novalidate>
+            <div class="input-container">
+                <input type="text" id="name" name="name" required/>
+                <label class="label" for="name">Ваше ім'я</label>
+                <div class="underline"></div>
+            </div>
+            <div class="input-container">
+                <input type="email" id="email" name="email" required/>
+                <label class="label" for="email">Ваш email</label>
+                <div class="underline"></div>
+            </div>
+            <div class="input-container">
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Введіть 10 цифр"/>
+                <label class="label" for="phone">Ваш телефон</label>
+                <div class="underline"></div>
+            </div>
+            <div class="input-container">
+                <textarea id="message" name="message" required></textarea>
+                <label class="label" for="message">Повідомлення</label>
+                <div class="underline"></div>
+            </div>
+            <button type="submit" class="styled-button">Надіслати</button>
+        </form>
+        <div class="form-success-message" id="form-success-message">
+            <p>Ваше повідомлення надіслано! Найближчим часом з вами зв’яжуться.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="animate-on-scroll">
+    <div class="footer-content">
+        <div class="footer-left">
+            <div class="footer-item">
+            </div>  <div class="footer-item">
+            </div>
+            <div class="footer-item">
+                <img src="/static/img/socials/phone.svg" alt="Телефон" class="footer-icon"/>
+                <span>{{.Phone1}}</span>
+                <span>{{.Phone2}}</span>
+            </div>
+            <div class="footer-item">
+                <img src="/static/img/socials/mail.svg" alt="Email" class="footer-icon"/>
+                <a href="{{.EmailURL}}">ballet.school.lviv@ukr.net</a>
+            </div>
+            <div class="footer-item">
+                <img src="/static/img/socials/location.svg" alt="Адреса" class="footer-icon"/>
+                <span>{{.Address}}</span>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="https://www.facebook.com/Lviv.State.Choreographic.School/?locale=uk_UA" target="_blank" rel="noopener" class="social-link">
+                <img src="/static/img/socials/facebook-icon.svg" alt="Facebook" class="footer-social-icon"/>
+            </a>
+            <a href="https://www.instagram.com/lvivballetschool/" target="_blank" rel="noopener" class="social-link">
+                <img src="/static/img/socials/instagram-icon.svg" alt="Instagram" class="footer-social-icon"/>
+            </a>
+        </div>
+    </div>
+    <div class="footer-copy">
+        © Державна Хореографічна Школа. Всі права захищено.
+    </div>
+</footer>
+</body>
+</html>

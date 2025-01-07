@@ -1,0 +1,130 @@
+.about-goal {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-goal::before, .about-goal::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 150%;
+    background: url('/static/img/wave-footer.svg') no-repeat center;
+    background-size: cover;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.about-goal::before {
+    left: 0;
+    transform: scaleX(-1) rotate(180deg);
+}
+
+.about-goal::after {
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.goal-image {
+    width: 200px;
+    display: block;
+    margin: 0 auto 12px;
+}
+
+.goal-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.goal-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.goal-text {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Медіа-запити для адаптації під різні пристрої */
+@media (max-width: 1200px) {
+    .goal-title {
+        font-size: 2.2em;
+    }
+    .goal-subtitle {
+        font-size: 1.3em;
+    }
+    .goal-text {
+        font-size: 1em;
+    }
+    .about-goal::before, .about-goal::after {
+        height: 120%;
+    }
+}
+
+@media (max-width: 992px) {
+    .goal-title {
+        font-size: 2em;
+    }
+    .goal-subtitle {
+        font-size: 1.2em;
+    }
+    .goal-text {
+        font-size: 1em;
+        max-width: 600px;
+    }
+    .goal-image {
+        width: 180px;
+    }
+    .about-goal::before, .about-goal::after {
+        height: 110%;
+    }
+}
+
+@media (max-width: 768px) {
+    .goal-title {
+        font-size: 1.8em;
+    }
+    .goal-subtitle {
+        font-size: 1.1em;
+    }
+    .goal-text {
+        font-size: 0.95em;
+        max-width: 500px;
+    }
+    .goal-image {
+        width: 150px;
+    }
+    .about-goal::before, .about-goal::after {
+        height: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .goal-title {
+        font-size: 1.5em;
+    }
+    .goal-subtitle {
+        font-size: 1em;
+    }
+    .goal-text {
+        font-size: 0.9em;
+        max-width: 90%;
+    }
+    .goal-image {
+        width: 120px;
+    }
+    .about-goal::before, .about-goal::after {
+        height: 90%;
+        top: 0;
+    }
+}

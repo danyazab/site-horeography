@@ -1,0 +1,126 @@
+/* Секція "Чому обирають нашу школу?"
+   Хвиля як фон зверху секції:
+   Робимо padding-top великим, щоб хвиля була позаду заголовка */
+
+.advantages {
+    position:relative;
+    background:url('/static/img/wave-advantages.svg') no-repeat center top;
+    background-size:cover;
+    padding:100px 20px 50px;
+    text-align:center;
+}
+
+.advantages h2 {
+    font-size:2em;
+    margin-bottom:40px;
+}
+
+/* Збільшена відстань між картками до 40px */
+.advantages-grid {
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:40px;
+    justify-items:center;
+}
+
+.adv-item {
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    width:80%;
+    max-width:250px;
+    text-align:center;
+    transform:translateY(30px);
+    opacity:0;
+    transition:opacity 0.8s ease,transform 0.8s ease;
+}
+
+.adv-item.visible {
+    opacity:1;
+    transform:translateY(0);
+}
+
+.adv-item:hover {
+    transform:scale(1.05) !important;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.adv-icon {
+    font-size:2em;
+    display:block;
+    margin-bottom:10px;
+}
+
+.adv-item h3 {
+    font-size:1.2em;
+    margin-bottom:10px;
+    color:#333;
+}
+
+.adv-item p {
+    font-size:1em;
+    color:#555;
+}
+
+/* Медіа-запити для адаптації під різні пристрої */
+@media (max-width: 1200px) {
+    .advantages-grid {
+        grid-template-columns:repeat(2, 1fr);
+        gap:30px;
+    }
+    .advantages h2 {
+        font-size:1.8em;
+    }
+}
+
+@media (max-width: 992px) {
+    .advantages-grid {
+        grid-template-columns:repeat(2, 1fr);
+        gap:25px;
+    }
+    .advantages h2 {
+        font-size:1.6em;
+    }
+    .adv-item {
+        width:90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .advantages-grid {
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+    .advantages h2 {
+        font-size:1.5em;
+    }
+    .adv-item {
+        width:95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .advantages {
+        padding:70px 15px 30px;
+    }
+    .advantages-grid {
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+    .advantages h2 {
+        font-size:1.3em;
+    }
+    .adv-item {
+        width:100%;
+    }
+    .adv-icon {
+        font-size:1.8em;
+    }
+    .adv-item h3 {
+        font-size:1.1em;
+    }
+    .adv-item p {
+        font-size:0.95em;
+    }
+}

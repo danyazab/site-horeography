@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Львівська Державна Хореографічна Школа"/>
+  <title>{{.SchoolName}} – Випускники</title>
+
+  <!-- Базові стилі сайту -->
+  <link rel="stylesheet" href="/static/css/header.css"/>
+  <link rel="stylesheet" href="/static/css/footer.css"/>
+  <link rel="stylesheet" href="/static/css/main.css"/>
+  <link rel="stylesheet" href="/static/css/admin.css" />
+  <link rel="stylesheet" href="/static/css/support.css" />
+
+
+
+  <!-- Підключення окремого файлу стилів для випускників -->
+  <link rel="stylesheet" href="/static/css/graduates.css"/>
+
+  <!-- Ваші скрипти при потребі -->
+  <script src="/static/js/main.js" defer></script>
+</head>
+<body>
+<!-- Прелоадер (якщо використовуєте) -->
+<div class="preloader">
+  <div class="preloader-content">
+    <!-- Ваш SVG-лоадер -->
+  </div>
+</div>
+
+<!-- Шапка сайту (header) -->
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <img src="/static/img/logo.png" alt="Логотип"/>
+    </div>
+    <nav class="main-nav">
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu">≡</button>
+      <ul class="menu">
+        <li class="item has-submenu">
+          <a href="#" class="link">
+            <span>Про школу</span>
+            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 15l-8-8h16z"></path></svg>
+          </a>
+          <div class="submenu">
+            <div class="submenu-item"><a href="#" class="submenu-link">Історія школи</a></div>
+            <div class="submenu-item"><a href="#" class="submenu-link">Структурні підрозділи</a></div>
+            <div class="submenu-item"><a href="#" class="submenu-link">Адміністрація</a></div>
+            <div class="submenu-item"><a href="#" class="submenu-link">Наші випускники</a></div>
+            <div class="submenu-item"><a href="#" class="submenu-link">Підтримка школи</a></div>
+          </div>
+        </li>
+        <li class="item has-submenu">
+          <a href="#" class="link">
+            <span>Навчальний процес</span>
+            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 15l-8-8h16z"></path></svg>
+          </a>
+          <div class="submenu">
+            <div class="submenu-item"><a href="#" class="submenu-link">Освітня програма</a></div>
+            <div class="submenu-item"><a href="#" class="submenu-link">Вартість навчання</a></div>
+            <div class="submenu-item"><a href="#" class="submenu-link">Вимоги до вступу</a></div>
+          </div>
+        </li>
+        <li class="item"><a href="#" class="link"><span>Галерея</span></a></li>
+        <li class="item"><a href="#" class="link"><span>Новини</span></a></li>
+        <li class="item"><a href="#" class="link"><span>Контакти</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Кнопки для мобільного меню (якщо використовуєте) -->
+<button class="scroll-menu-btn">☰</button>
+<div class="menu-overlay"></div>
+
+<!-- ОСНОВНИЙ КОНТЕНТ СТОРІНКИ «Випускники» -->
+<main class="graduates-page animate-on-scroll">
+  <!-- ГОЛОВНИЙ КОНТЕНТ (Сторінка «Адміністрація») -->
+    <!-- Заголовок/опис сторінки -->
+    <section class="admin-hero">
+      <div class="container">
+        <h1 class="admin-page-title">Наші Випускники</h1>
+        <p class="admin-page-subtitle">
+          Львівська хореографічна школа має багату історію й невпинно розвиває таланти.
+      </div>
+    </section>
+
+    <section class="graduates-content container">
+    <!-- Вступний блок -->
+    <div class="intro-block">
+      <p>
+        Наші випускники здобувають визнання як в Україні, так і в багатьох країнах світу – від виступів на провідних балетних сценах
+        до керівництва власними хореографічними колективами.
+      </p>
+    </div>
+
+    <!-- Блок цитати / виділеного тексту -->
+    <blockquote class="highlight-quote">
+      «Їхня майстерність, витонченість і вміння передати емоції високо цінуються на міжнародній арені.
+      Багато випускників отримали почесні нагороди й відзнаки, а дехто навіть відкрив власні школи
+      та студії, передаючи знання й натхнення новому поколінню танцюристів».
+    </blockquote>
+
+    <!-- Основний опис з підзаголовками -->
+    <div class="graduates-description">
+      <h2 class="section-heading">Досягнення та внесок</h2>
+      <p>
+        Наші випускники визнані в найпрестижніших танцювальних трупах, вони стали артистами
+        відомих театрів, вибороли перемоги на міжнародних конкурсах і виступали з гастролями по всьому світу.
+      </p>
+      <p>
+        Окрім сценічної діяльності, колишні учні школи активно займаються педагогікою – ведуть
+        майстер-класи, читають лекції в хореографічних установах та започатковують власні навчальні програми.
+        Це сприяє постійному розвитку балетного мистецтва і допомагає виховувати нові покоління танцівників.
+      </p>
+
+      <h2 class="section-heading">Відомі імена</h2>
+      <p>
+        Серед випускників, якими ми особливо пишаємося, є:
+      </p>
+    </div>
+
+    <!-- Список випускників у кілька колонок -->
+    <div class="graduates-list">
+      <ul>
+        <li>Андрій Глазшнейдер</li>
+        <li>Олег Петрик</li>
+        <li>Христина Трач</li>
+        <li>Юлія Єрмоленко</li>
+        <li>Наталія Дідик</li>
+        <li>Анастасія Ісупова</li>
+        <li>Юлія Охріменко-Рижа</li>
+        <li>Віталій Рижий</li>
+        <li>Юлія Рома-Михаліха</li>
+        <li>Микола Санжаревський</li>
+        <li>Володимир Судомляк</li>
+        <li>Вікторія Ткач</li>
+        <li>Євген Свєтліца</li>
+        <li>Зоряна Дворська</li>
+        <li>Галина Білоус</li>
+        <li>Олена Павлова</li>
+        <li>Юлія Ушакова</li>
+        <li>Анна Шух</li>
+        <li>Марія Потапова</li>
+        <li>Ярина Котис</li>
+        <li>Тетяна Прокоф’єва</li>
+        <li>Ольга Пилипенко</li>
+        <li>Мирослав Мельник</li>
+        <li>Максим Козак</li>
+        <li>Ольга Фабіянська</li>
+        <li>Уляна Корчевська</li>
+        <li>Андрій Адонін</li>
+        <li>Олена Мицко</li>
+        <li>Галина Бас</li>
+        <li>Ірина Довгановська</li>
+        <li>Святослав Кащій</li>
+        <li>Арсен Марусенко</li>
+        <li>Олег Ласка</li>
+        <li>Юрій Мартин</li>
+        <li>Наталія Рузяк</li>
+        <li>Романа Думанська</li>
+        <li>Роксолана Іскра</li>
+        <li>... та багато інших</li>
+      </ul>
+    </div>
+
+    <!-- Галерея з 50 фотографіями -->
+    <div class="graduates-gallery">
+      <!-- Припустимо, що у вас фотографії з назвами 1.jpg, 2.jpg ... 50.jpg -->
+      <!-- Змінюйте шляхи до ваших реальних зображень -->
+      <!-- Кожне зображення в окремому <figure> або <div> -->
+      <!-- Для прикладу 5 карток, а в реальному проекті додайте до 50 -->
+      <div class="photo-card">
+        <img src="/static/img/graduates/1.jpg" alt="Випускник 1"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/2.jpg" alt="Випускник 2"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/3.jpg" alt="Випускник 3"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/4.jpg" alt="Випускник 4"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/5.jpg" alt="Випускник 5"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/6.jpg" alt="Випускник 1"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/7.jpg" alt="Випускник 2"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/8.jpg" alt="Випускник 3"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/9.jpg" alt="Випускник 5"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/10.jpg" alt="Випускник 1"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/11.jpg" alt="Випускник 2"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/12.jpg" alt="Випускник 3"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/13.jpg" alt="Випускник 4"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/14.jpg" alt="Випускник 5"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/15.jpg" alt="Випускник 1"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/16.jpg" alt="Випускник 2"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/17.jpg" alt="Випускник 3"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/18.jpg" alt="Випускник 4"/>
+      </div>
+      <div class="photo-card">
+        <img src="/static/img/graduates/19.jpg" alt="Випускник 5"/>
+      </div><div class="photo-card">
+        <img src="/static/img/graduates/20.jpg" alt="Випускник 5"/>
+      </div><div class="photo-card">
+        <img src="/static/img/graduates/21.jpg" alt="Випускник 5"/>
+      </div><div class="photo-card">
+        <img src="/static/img/graduates/22.jpg" alt="Випускник 5"/>
+      </div><div class="photo-card">
+        <img src="/static/img/graduates/23.jpg" alt="Випускник 5"/>
+      </div><div class="photo-card">
+        <img src="/static/img/graduates/24.jpg" alt="Випускник 5"/>
+      </div><div class="photo-card">
+        <img src="/static/img/graduates/25.jpg" alt="Випускник 5"/>
+      </div><div class="photo-card">
+        <img src="/static/img/graduates/26.jpg" alt="Випускник 5"/>
+      </div><div class="photo-card">
+        <img src="/static/img/graduates/27.jpg" alt="Випускник 5"/>
+      </div><div class="photo-card">
+        <img src="/static/img/graduates/28.jpg" alt="Випускник 5"/>
+      </div><div class="photo-card">
+        <img src="/static/img/graduates/29.jpg" alt="Випускник 5"/>
+      </div><div class="photo-card">
+        <img src="/static/img/graduates/30.jpg" alt="Випускник 5"/>
+      </div>
+      <!-- ... Додавайте так далі до 50 фото -->
+    </div>
+  </section>
+  <section class="bank-details">
+    <div class="bank-details-inner">
+      <p class="bank-details-number">
+        Ми віримо що кожен з цих імен продовжуватиме писати нові сторінки в історії
+          танцювального мистецтва і надихатиме майбутні покоління на великі звершення.</strong>
+      </p>
+    </div>
+  </section>
+</main>
+
+<!-- Футер сайту -->
+<footer class="animate-on-scroll">
+  <div class="footer-content">
+    <div class="footer-left">
+      <div class="footer-item"></div>
+      <div class="footer-item"></div>
+      <div class="footer-item">
+        <img src="/static/img/socials/phone.svg" alt="Телефон" class="footer-icon"/>
+        <span>{{.Phone1}}</span>
+        <span>{{.Phone2}}</span>
+      </div>
+      <div class="footer-item">
+        <img src="/static/img/socials/mail.svg" alt="Email" class="footer-icon"/>
+        <a href="{{.EmailURL}}">ballet.school.lviv@ukr.net</a>
+      </div>
+      <div class="footer-item">
+        <img src="/static/img/socials/location.svg" alt="Адреса" class="footer-icon"/>
+        <span>{{.Address}}</span>
+      </div>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.facebook.com/Lviv.State.Choreographic.School/?locale=uk_UA" target="_blank" rel="noopener" class="social-link">
+        <img src="/static/img/socials/facebook-icon.svg" alt="Facebook" class="footer-social-icon"/>
+      </a>
+      <a href="https://www.instagram.com/lvivballetschool/" target="_blank" rel="noopener" class="social-link">
+        <img src="/static/img/socials/instagram-icon.svg" alt="Instagram" class="footer-social-icon"/>
+      </a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    © Державна Хореографічна Школа. Всі права захищено.
+  </div>
+</footer>
+</body>
+</html>
