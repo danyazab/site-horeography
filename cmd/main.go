@@ -6,11 +6,10 @@ import (
 	"log"
 	"net/http"
 	"path/filepath"
+	"site-horeography/handlers"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-
-	"site-horeography/handlers"
 )
 
 var tmpl *template.Template
@@ -31,11 +30,16 @@ func main() {
 
 	// Реєструємо маршрути:
 	e.GET("/", homeHandler)
-	// Новий маршрут для сторінки "Адміністрація"
+
 	e.GET("/administration", adminHandler)
 	e.GET("/support", supportHandler)
 	e.GET("/graduates", graduatesHandler)
-	// Обробка форми з контактами (POST)
+	e.GET("/cost-education", costEducationHandler)
+	e.GET("/admission-requirements", admissionRequirementsHandler)
+	e.GET("/educational-programs", educationalProgramsHandler)
+	e.GET("/history", historyHandler)
+	e.GET("/structural-divisions", structuralDivisionsHandler)
+	// Processing a form with contacts (POST)
 	e.POST("/contact", handlers.ContactHandler)
 
 	fmt.Println("Сервер запущено на http://localhost:8089")
@@ -107,6 +111,72 @@ func graduatesHandler(c echo.Context) error {
 	}
 
 	err := tmpl.ExecuteTemplate(c.Response().Writer, "graduates.html", data)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	return nil
+}
+
+func costEducationHandler(c echo.Context) error {
+	data := map[string]interface{}{
+		"SchoolName": "Львівська Хореографічна Школа",
+		// Можливо, додаткові поля, потрібні для admin.html,
+		// наприклад, список осіб / інформації про адміністрацію.
+	}
+
+	err := tmpl.ExecuteTemplate(c.Response().Writer, "cost-education.html", data)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	return nil
+}
+func admissionRequirementsHandler(c echo.Context) error {
+	data := map[string]interface{}{
+		"SchoolName": "Львівська Хореографічна Школа",
+		// Можливо, додаткові поля, потрібні для admin.html,
+		// наприклад, список осіб / інформації про адміністрацію.
+	}
+
+	err := tmpl.ExecuteTemplate(c.Response().Writer, "admission-requirements.html", data)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	return nil
+}
+func educationalProgramsHandler(c echo.Context) error {
+	data := map[string]interface{}{
+		"SchoolName": "Львівська Хореографічна Школа",
+		// Можливо, додаткові поля, потрібні для admin.html,
+		// наприклад, список осіб / інформації про адміністрацію.
+	}
+
+	err := tmpl.ExecuteTemplate(c.Response().Writer, "educational-programs.html", data)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	return nil
+}
+func historyHandler(c echo.Context) error {
+	data := map[string]interface{}{
+		"SchoolName": "Львівська Хореографічна Школа",
+		// Можливо, додаткові поля, потрібні для admin.html,
+		// наприклад, список осіб / інформації про адміністрацію.
+	}
+
+	err := tmpl.ExecuteTemplate(c.Response().Writer, "history.html", data)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	return nil
+}
+func structuralDivisionsHandler(c echo.Context) error {
+	data := map[string]interface{}{
+		"SchoolName": "Львівська Хореографічна Школа",
+		// Можливо, додаткові поля, потрібні для admin.html,
+		// наприклад, список осіб / інформації про адміністрацію.
+	}
+
+	err := tmpl.ExecuteTemplate(c.Response().Writer, "structural-divisions.html", data)
 	if err != nil {
 		return c.String(http.StatusInternalServerError, err.Error())
 	}

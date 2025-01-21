@@ -1,0 +1,146 @@
+/* Загальний контейнер */
+.structural-divisions-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Заголовок сторінки */
+.page-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    color: #2c2c2c;
+}
+
+/* Кожен відділ */
+.division-block {
+    margin-bottom: 50px;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* Заголовок відділу */
+.division-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #9b59b6; /* або змініть під свій колір */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Стисло виділена фраза (lead) */
+.lead {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Менші підзаголовки */
+.division-subtitle {
+    font-size: 1.3rem;
+    margin: 1em 0 0.5em;
+    color: #444;
+    font-weight: 600;
+}
+
+/* Списки (bullet) */
+.bullet-list {
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+    list-style-type: disc;
+}
+.bullet-list li {
+    margin: 5px 0;
+}
+
+/* Списки (check) */
+.check-list {
+    list-style: none;
+    padding-left: 25px;
+}
+.check-list li {
+    position: relative;
+    margin: 0.5em 0;
+    padding-left: 20px;
+}
+.check-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #9b59b6;
+}
+
+/* Цитати */
+.highlight-quote {
+    margin: 20px auto;
+    padding: 15px 20px;
+    background: #f9f9f9;
+    border-left: 5px solid #9b59b6;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+}
+.quote-small {
+    font-size: 1rem;
+}
+
+/* Автор цитати, якщо додаєте */
+.author {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Виділений блок (highlight-box) */
+.highlight-box {
+    background: #fafafa;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #9b59b6;
+    border-radius: 5px;
+}
+.highlight-box h4 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* Прикінцевий текст */
+.closing-text {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #555;
+    font-style: italic;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    .division-title {
+        font-size: 1.5rem;
+    }
+    .lead {
+        font-size: 1.1rem;
+    }
+}
+
+/* Ефекти анімації при скролі (якщо Intersection Observer у вас налаштовано) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

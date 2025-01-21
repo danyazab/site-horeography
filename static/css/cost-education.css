@@ -1,0 +1,135 @@
+/* ============================= */
+/* СТИЛІ ДЛЯ СТОРІНКИ «ВАРТІСТЬ НАВЧАННЯ» */
+/* ============================= */
+
+/* Контейнер */
+.tuition-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Заголовок сторінки */
+.page-title {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+    color: #2c2c2c;
+}
+
+/* Вступний блок */
+.tuition-intro {
+    margin-bottom: 30px;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* Підзаголовок «Якісна хореографічна освіта» */
+.tuition-subtitle {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #9b59b6; /* або ваш акцентний колір */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Підсвічений блок для ключових речень */
+.highlight-box {
+    background: #f9f9f9;
+    border-left: 5px solid #9b59b6;
+    padding: 15px 20px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+.highlight-box p {
+    margin: 0;
+    font-style: italic;
+    color: #555;
+}
+
+/* Блоки з цінами (price-box) */
+.price-box {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #fafafa;
+    border-left: 5px solid #9b59b6;
+    border-radius: 5px;
+}
+
+.price-box-title {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #9b59b6;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.price-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.price-note {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Якщо хочете виділити підготовчий клас */
+.price-box.highlight {
+    background: #f0eefc;
+}
+
+/* Цитата/виділений блок для пільгових категорій */
+.highlight-quote {
+    margin: 30px auto 20px auto;
+    padding: 15px 20px;
+    background: #ffffff;
+    border-left: 5px solid #e74c3c; /* інший акцентний колір, наприклад, червоний */
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Завершальний текст-заклик */
+.closing-text {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+    .tuition-subtitle {
+        font-size: 1.3rem;
+    }
+    .price-box {
+        padding: 15px;
+    }
+    .price-value {
+        font-size: 1.3rem;
+    }
+    .closing-text {
+        font-size: 1rem;
+    }
+}
+
+/* Приклад анімації при скролі (якщо Intersection Observer підключено) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
