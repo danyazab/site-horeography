@@ -37,6 +37,11 @@ window.addEventListener('scroll', () => {
 /* ============ ВІДКРИТТЯ/ЗАКРИТТЯ МЕНЮ (МОБІЛЬНЕ) ============ */
 toggleButton.addEventListener('click', () => {
     navList.classList.toggle('show');
+    if (window.innerWidth >= 768) {
+        header.classList.remove('hide-header');
+        scrollMenuBtn.style.display = 'none';
+
+    }
 });
 
 /* Якщо хочете, щоб ще й ця кнопка відкривала/закривала меню */
