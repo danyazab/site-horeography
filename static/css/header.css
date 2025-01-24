@@ -211,7 +211,7 @@ body {
 /* ========================= */
 
 /* Для десктопу, тобто ширше 768px */
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
     .submenu {
         height: auto;
         background: #eeedf4;         /* або свій колір */
@@ -221,14 +221,14 @@ body {
 }
 
 /* На планшетах (≤1024px) зменшуємо шрифт у меню та підменю */
-@media (max-width: 1024px) {
+@media (max-width: 1124px) {
     .menu,
     .menu a,
     .submenu-link {
-        font-size: 90%;
+        font-size: 100%;
     }
     .menu {
-        gap: 15px;
+        gap: 25px;
     }
 }
 
@@ -236,7 +236,7 @@ body {
 /* На телефонах (≤768px):        */
 /* Робимо side-drawer (виїзд)   */
 /* ============================= */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .mobile-menu-toggle {
         display: block; /* Показуємо кнопку гамбургер */
     }
@@ -246,17 +246,37 @@ body {
         /* [NEW] – робимо side-drawer, що виїжджає праворуч */
         display: block;        /* щоб відпрацював width/height коректно */
         position: fixed;       /* фіксуємо вікно меню */
-        top: 11%;
         right: 0;
         width: 250px;         /* ширина бічної панелі */
         height: 100vh;        /* на всю висоту */
         background: #fff;
         box-shadow: -4px 0 8px rgba(0,0,0,0.1);
-        padding: 60px 20px;    /* відступ зверху — щоб не перекривало шапку */
+        padding: 115px 25px;    /* відступ зверху — щоб не перекривало шапку */
         transform: translateX(100%);  /* сховане за правим краєм */
         transition: transform 0.3s ease-in-out;
         z-index: 2000;
         overflow-y: auto;      /* якщо пунктів багато, можна прокручувати */
+    }
+    /* Загальний стиль для пунктів меню */
+    .menu li {
+        border-bottom: 1px solid #eee; /* Лінія під кожним пунктом меню */
+        padding-bottom: 2px;
+        margin-bottom: 5px;
+    }
+
+    /* Приховуємо лінію для пунктів, які мають підменю */
+    .menu .item.has-submenu {
+        border-bottom: none;
+    }
+
+    /* Додаємо лінію, якщо підменю розкрите */
+    .menu .item.has-submenu.open {
+        border-bottom: 1px solid #eee; /* Лінія з'являється при відкритті */
+    }
+
+
+    .menu li:last-child {
+        border-bottom: none; /* Забираємо лінію під останнім пунктом */
     }
 
     /* При натисканні на гамбургер меню показується */
@@ -286,19 +306,19 @@ body {
         visibility: visible;
         transform: none;
         border: none;
-        border-radius: 8px;
+        border-radius: 10px;
         margin: 0;
-        padding-left: 20px; /* додамо відступ ліворуч */
-        background: #f9f9f9;
+        padding-left: 13px; /* додамо відступ ліворуч */
+        background: #f4f4f4;
         max-height: 0;      /* закрите підменю з нульовою висотою */
         overflow: hidden;   /* приховуємо вміст за межами */
-        transition: max-height 0.3s ease-in-out;
+        transition: max-height 0.4s ease-in-out;
     }
 
     /* Пункти підменю - ліворуч, підрівнюємо шрифт і відступ */
     .submenu-link {
         text-align: left;
-        padding: 10px 0;
+        padding: 10px 10px;
         display: block;
     }
 
@@ -341,7 +361,7 @@ body {
 /* ========================= */
 .animate-on-scroll {
     opacity: 0;
-    transition: opacity 0.6s ease;
+    transition: opacity 0.7s ease;
 }
 .animate-on-scroll.visible {
     opacity: 1;

@@ -1,6 +1,6 @@
 window.onload = () => {
     // Якщо є прелоадер, ховаємо його
-    const preloader = document.querySelector('.preloader');
+    const preloader = document.querySelector('.loader');
     if (preloader) {
         preloader.style.display = 'none';
     }
@@ -10,6 +10,7 @@ const header = document.querySelector('.main-header');
 const scrollMenuBtn = document.querySelector('.scroll-menu-btn');
 const navList = document.querySelector('.menu');
 const toggleButton = document.querySelector('.mobile-menu-toggle');
+const body = document.body; // Для блокування скролу
 let lastScrollTop = 0;
 
 /* ============ ЛОГІКА ПРИ СКРОЛІ (ХОВАТИ/ПОКАЗУВАТИ ШАПКУ) ============ */
@@ -22,7 +23,7 @@ window.addEventListener('scroll', () => {
     } else {
         // Скролимо вгору
         header.classList.remove('hide-header');
-            scrollMenuBtn.style.display = 'none';
+        scrollMenuBtn.style.display = 'none';
     }
     lastScrollTop = st <= 0 ? 0 : st;
 
@@ -36,26 +37,56 @@ window.addEventListener('scroll', () => {
 
 /* ============ ВІДКРИТТЯ/ЗАКРИТТЯ МЕНЮ (МОБІЛЬНЕ) ============ */
 toggleButton.addEventListener('click', () => {
-    navList.classList.toggle('show');
+    const isMenuOpen = navList.classList.toggle('show');
+
+    // Ховаємо шапку та блокуємо скрол, якщо меню відкрите
+    if (isMenuOpen) {
+        header.classList.add('hide-header');
+        body.style.overflow = 'hidden'; // Блокування скролу
+        scrollMenuBtn.style.display = 'flex';
+
+    } else {
         header.classList.remove('hide-header');
         scrollMenuBtn.style.display = 'none';
+        body.style.overflow = ''; // Розблокування скролу
+    }
 });
 
 /* Якщо хочете, щоб ще й ця кнопка відкривала/закривала меню */
 scrollMenuBtn.addEventListener('click', () => {
-    navList.classList.toggle('show');
-    if (window.innerWidth >= 768) {
-        header.classList.remove('hide-header');
-        scrollMenuBtn.style.display = 'none';
 
+    if (window.innerWidth >= 1124) {
+        navList.classList.toggle('show');
+        if (window.innerWidth >= 768) {
+            header.classList.remove('hide-header');
+            scrollMenuBtn.style.display = 'none';
+
+        }
+    } else {
+        const isMenuOpen = navList.classList.toggle('show');
+
+        if (isMenuOpen) {
+            header.classList.add('hide-header');
+            if (window.innerWidth <= 1124) {
+                body.style.overflow = 'hidden'; // Блокування скролу
+            }
+        } else {
+            header.classList.remove('hide-header');
+            scrollMenuBtn.style.display = 'none';
+            body.style.overflow = ''; // Розблокування скролу
+
+
+        }
     }
-    });
+        // Ховаємо шапку та блокуємо скрол, якщо меню відкрите
+
+});
 
 /* ============ ВІДКРИТТЯ/ЗАКРИТТЯ ПІДМЕНЮ НА МОБІЛЬНИХ (АКОРДЕОН) ============ */
 document.querySelectorAll('.item.has-submenu > .link').forEach(link => {
     link.addEventListener('click', (e) => {
         // Спрацьовує тільки якщо ширина <= 768px
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1124) {
             e.preventDefault();
             const parent = link.closest('.item.has-submenu');
             const submenu = parent.querySelector('.submenu');

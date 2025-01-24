@@ -1,111 +1,123 @@
 
-/* Preloader */
-.preloader {
-    position: fixed;
-    z-index: 9999;
-    background: #fff;
-    top:0; left:0; right:0; bottom:0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.preloader-content {
-    text-align: center;
-}
-
-/* Loader Styles (з вашого коду) */
 .loader {
-    width: 8em;
-    height: 8em;
+    width: 80px;
+    height: 50px;
+    position: relative;
 }
 
-.loader__eye1,
-.loader__eye2,
-.loader__mouth1,
-.loader__mouth2 {
-    animation: eye1 3s ease-in-out infinite;
+.loader-text {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    color: #C8B6FF;
+    animation: text_713 3.5s ease both infinite;
+    font-size: .8rem;
+    letter-spacing: 1px;
 }
 
-.loader__eye2 {
-    animation-name: eye2;
+.load {
+    background-color: #9A79FF;
+    border-radius: 50px;
+    display: block;
+    height: 16px;
+    width: 16px;
+    bottom: 0;
+    position: absolute;
+    transform: translateX(64px);
+    animation: loading_713 3.5s ease both infinite;
 }
 
-.loader__mouth1 {
-    animation-name: mouth1;
+.load::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #D1C2FF;
+    border-radius: inherit;
+    animation: loading2_713 3.5s ease both infinite;
 }
 
-.loader__mouth2 {
-    animation-name: mouth2;
-    visibility: hidden;
-}
+@keyframes text_713 {
+    0% {
+        letter-spacing: 1px;
+        transform: translateX(0px);
+    }
 
-/* анімації для loader */
-@keyframes eye1 {
-    from {
-        transform: rotate(-260deg) translate(0, -56px);
+    40% {
+        letter-spacing: 2px;
+        transform: translateX(26px);
     }
-    50%, 60% {
-        animation-timing-function: cubic-bezier(0.17, 0, 0.58, 1);
-        transform: rotate(-40deg) translate(0, -56px) scale(1);
-    }
-    to {
-        transform: rotate(225deg) translate(0, -56px) scale(0.35);
-    }
-}
 
-@keyframes eye2 {
-    from {
-        transform: rotate(-260deg) translate(0, -56px);
+    80% {
+        letter-spacing: 1px;
+        transform: translateX(32px);
     }
-    50% {
-        transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1);
-    }
-    52.5% {
-        transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1, 0);
-    }
-    55%, 70% {
-        animation-timing-function: cubic-bezier(0, 0, 0.28, 1);
-        transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1);
-    }
-    to {
-        transform: rotate(150deg) translate(0, -56px) scale(0.4);
-    }
-}
 
-@keyframes mouth1 {
-    from {
-        animation-timing-function: ease-in;
-        stroke-dasharray: 0 351.86;
-        stroke-dashoffset: 0;
+    90% {
+        letter-spacing: 2px;
+        transform: translateX(0px);
     }
-    25% {
-        animation-timing-function: ease-out;
-        stroke-dasharray: 175.93 351.86;
-        stroke-dashoffset: 0;
-    }
-    50% {
-        animation-timing-function: steps(1, start);
-        stroke-dasharray: 175.93 351.86;
-        stroke-dashoffset: -175.93;
-        visibility: visible;
-    }
-    75%, to {
-        visibility: hidden;
+
+    100% {
+        letter-spacing: 1px;
+        transform: translateX(0px);
     }
 }
 
-@keyframes mouth2 {
-    from {
-        animation-timing-function: steps(1, end);
-        visibility: hidden;
+@keyframes loading_713 {
+    0% {
+        width: 16px;
+        transform: translateX(0px);
     }
-    50% {
-        animation-timing-function: ease-in-out;
-        visibility: visible;
-        stroke-dashoffset: 0;
+
+    40% {
+        width: 100%;
+        transform: translateX(0px);
     }
-    to {
-        stroke-dashoffset: -351.86;
+
+    80% {
+        width: 16px;
+        transform: translateX(64px);
+    }
+
+    90% {
+        width: 100%;
+        transform: translateX(0px);
+    }
+
+    100% {
+        width: 16px;
+        transform: translateX(0px);
     }
 }
+
+@keyframes loading2_713 {
+    0% {
+        transform: translateX(0px);
+        width: 16px;
+    }
+
+    40% {
+        transform: translateX(0%);
+        width: 80%;
+    }
+
+    80% {
+        width: 100%;
+        transform: translateX(0px);
+    }
+
+    90% {
+        width: 80%;
+        transform: translateX(15px);
+    }
+
+    100% {
+        transform: translateX(0px);
+        width: 16px;
+    }
+}
+
+
+
