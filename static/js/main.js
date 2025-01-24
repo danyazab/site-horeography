@@ -1,6 +1,6 @@
 window.onload = () => {
     // Якщо є прелоадер, ховаємо його
-    const preloader = document.querySelector('.preloader');
+    const preloader = document.querySelector('.loader');
     if (preloader) {
         preloader.style.display = 'none';
     }
