@@ -7,17 +7,17 @@
     <title>{{.SchoolName}} – Історія школи</title>
 
     <!-- Підключення базових стилів сайту -->
-    <link rel="stylesheet" href="/static/css/header.css">
-    <link rel="stylesheet" href="/static/css/footer.css">
-    <link rel="stylesheet" href="/static/css/main.css">
-    <link rel="stylesheet" href="/static/css/admin.css" />
+    <link rel="stylesheet" href="/frontend/static/css/header.css">
+    <link rel="stylesheet" href="/frontend/static/css/footer.css">
+    <link rel="stylesheet" href="/frontend/static/css/main.css">
+    <link rel="stylesheet" href="/frontend/static/css/admin.css" />
 
 
     <!-- Окремий файл зі стилями цієї сторінки -->
-    <link rel="stylesheet" href="/static/css/history.css">
+    <link rel="stylesheet" href="/frontend/static/css/history.css">
 
     <!-- Ваш JS (якщо потрібен) -->
-    <script src="/static/js/main.js" defer></script>
+    <script src="/frontend/static/js/main.js" defer></script>
 </head>
 <body>
 <!-- Прелоадер (якщо є) -->
@@ -31,7 +31,7 @@
 <header class="main-header">
     <div class="header-container">
         <div class="logo">
-            <img src="/static/img/logo.png" alt="Логотип">
+            <img src="/frontend/static/img/logo.png" alt="Логотип">
         </div>
         <nav class="main-nav">
             <button class="mobile-menu-toggle" aria-label="Toggle Menu">≡</button>
@@ -99,7 +99,7 @@
 
         <!-- Фото #1 -->
         <figure class="history-photo-block">
-            <img src="/static/img/history/h1.jpg" alt="Фото історичного періоду школи" class="history-photo">
+            <img src="/frontend/static/img/history/h1.jpg" alt="Фото історичного періоду школи" class="history-photo">
             <figcaption>Перші роки існування балетної студії у Львівському оперному театрі.</figcaption>
         </figure>
 
@@ -136,7 +136,7 @@
 
         <!-- Фото #2 -->
         <figure class="history-photo-block">
-            <img src="/static/img/history/history2.jpg" alt="Старе фото школи" class="history-photo">
+            <img src="/frontend/static/img/history/history2.jpg" alt="Старе фото школи" class="history-photo">
             <figcaption>Капітальний ремонт і розширені танцювальні класи – одна з важливих віх у розвитку школи.</figcaption>
         </figure>
 
@@ -170,7 +170,7 @@
 
         <!-- Фото #3 -->
         <figure class="history-photo-block">
-            <img src="/static/img/history/history3.jpg" alt="Учні під час виступу" class="history-photo">
+            <img src="/frontend/static/img/history/history3.jpg" alt="Учні під час виступу" class="history-photo">
             <figcaption>Виступи школярів за кордоном – можливість продемонструвати світові українську хореографію.</figcaption>
         </figure>
 
@@ -241,25 +241,25 @@
             <div class="footer-item"></div>
             <div class="footer-item"></div>
             <div class="footer-item">
-                <img src="/static/img/socials/phone.svg" alt="Телефон" class="footer-icon">
+                <img src="/frontend/static/img/socials/phone.svg" alt="Телефон" class="footer-icon">
                 <span>{{.Phone1}}</span>
                 <span>{{.Phone2}}</span>
             </div>
             <div class="footer-item">
-                <img src="/static/img/socials/mail.svg" alt="Email" class="footer-icon">
+                <img src="/frontend/static/img/socials/mail.svg" alt="Email" class="footer-icon">
                 <a href="{{.EmailURL}}">ballet.school.lviv@ukr.net</a>
             </div>
             <div class="footer-item">
-                <img src="/static/img/socials/location.svg" alt="Адреса" class="footer-icon">
+                <img src="/frontend/static/img/socials/location.svg" alt="Адреса" class="footer-icon">
                 <span>{{.Address}}</span>
             </div>
         </div>
         <div class="footer-right">
             <a href="https://www.facebook.com/Lviv.State.Choreographic.School/?locale=uk_UA" target="_blank" rel="noopener" class="social-link">
-                <img src="/static/img/socials/facebook-icon.svg" alt="Facebook" class="footer-social-icon">
+                <img src="/frontend/static/img/socials/facebook-icon.svg" alt="Facebook" class="footer-social-icon">
             </a>
             <a href="https://www.instagram.com/lvivballetschool/" target="_blank" rel="noopener" class="social-link">
-                <img src="/static/img/socials/instagram-icon.svg" alt="Instagram" class="footer-social-icon">
+                <img src="/frontend/static/img/socials/instagram-icon.svg" alt="Instagram" class="footer-social-icon">
             </a>
         </div>
     </div>

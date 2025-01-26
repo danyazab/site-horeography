@@ -7,17 +7,17 @@
     <title>{{.SchoolName}} – Підтримка школи</title>
 
     <!-- Підключення наявних CSS (або додайте новий файл) -->
-    <link rel="stylesheet" href="/static/css/header.css"/>
-    <link rel="stylesheet" href="/static/css/hero.css"/>
-    <link rel="stylesheet" href="/static/css/footer.css"/>
-    <link rel="stylesheet" href="/static/css/main.css"/>
-    <link rel="stylesheet" href="/static/css/support.css" />
-    <link rel="stylesheet" href="/static/css/admin.css" />
+    <link rel="stylesheet" href="/frontend/static/css/header.css"/>
+    <link rel="stylesheet" href="/frontend/static/css/hero.css"/>
+    <link rel="stylesheet" href="/frontend/static/css/footer.css"/>
+    <link rel="stylesheet" href="/frontend/static/css/main.css"/>
+    <link rel="stylesheet" href="/frontend/static/css/support.css" />
+    <link rel="stylesheet" href="/frontend/static/css/admin.css" />
 
 
 
     <!-- Сюди ж додайте ваш скрипт main.js, якщо потрібна анімація при скролі і т.д. -->
-    <script src="/static/js/main.js" defer></script>
+    <script src="/frontend/static/js/main.js" defer></script>
 </head>
 <body>
 <!-- Прелоадер (за потреби) -->
@@ -34,7 +34,7 @@
 <header class="main-header">
     <div class="header-container">
         <div class="logo">
-            <img src="/static/img/logo.png" alt="Логотип"/>
+            <img src="/frontend/static/img/logo.png" alt="Логотип"/>
         </div>
         <nav class="main-nav">
             <button class="mobile-menu-toggle" aria-label="Toggle Menu">≡</button>
@@ -113,7 +113,7 @@
         <!-- Блок із зображенням (QR-код ПриватБанк) -->
         <div class="support-image-block">
             <!-- Замість шляху /static/img/qr-privat.jpg поставте оригінальну назву та шлях до файлу -->
-            <img src="/static/img/support/privat_qr.jpg" alt="QR-код для внесків" class="support-image"/>
+            <img src="/frontend/static/img/support/privat_qr.jpg" alt="QR-код для внесків" class="support-image"/>
         </div>
     </section>
 
@@ -138,25 +138,25 @@
             <div class="footer-item"></div>
             <div class="footer-item"></div>
             <div class="footer-item">
-                <img src="/static/img/socials/phone.svg" alt="Телефон" class="footer-icon"/>
+                <img src="/frontend/static/img/socials/phone.svg" alt="Телефон" class="footer-icon"/>
                 <span>{{.Phone1}}</span>
                 <span>{{.Phone2}}</span>
             </div>
             <div class="footer-item">
-                <img src="/static/img/socials/mail.svg" alt="Email" class="footer-icon"/>
+                <img src="/frontend/static/img/socials/mail.svg" alt="Email" class="footer-icon"/>
                 <a href="{{.EmailURL}}">ballet.school.lviv@ukr.net</a>
             </div>
             <div class="footer-item">
-                <img src="/static/img/socials/location.svg" alt="Адреса" class="footer-icon"/>
+                <img src="/frontend/static/img/socials/location.svg" alt="Адреса" class="footer-icon"/>
                 <span>{{.Address}}</span>
             </div>
         </div>
         <div class="footer-right">
             <a href="https://www.facebook.com/Lviv.State.Choreographic.School/?locale=uk_UA" target="_blank" rel="noopener" class="social-link">
-                <img src="/static/img/socials/facebook-icon.svg" alt="Facebook" class="footer-social-icon"/>
+                <img src="/frontend/static/img/socials/facebook-icon.svg" alt="Facebook" class="footer-social-icon"/>
             </a>
             <a href="https://www.instagram.com/lvivballetschool/" target="_blank" rel="noopener" class="social-link">
-                <img src="/static/img/socials/instagram-icon.svg" alt="Instagram" class="footer-social-icon"/>
+                <img src="/frontend/static/img/socials/instagram-icon.svg" alt="Instagram" class="footer-social-icon"/>
             </a>
         </div>
     </div>

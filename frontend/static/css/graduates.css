@@ -2,7 +2,7 @@
 .graduates-page .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 45px;
+    padding: 30px;
 }
 
 /* Заголовок сторінки */
@@ -58,14 +58,15 @@
     -moz-column-count: 3; /* Для Firefox */
     -webkit-column-count: 3; /* Для Safari */
     column-count: 3; /* Кількість колонок */
-    column-gap: 40px; /* Відстань між колонками */
+    column-gap: 30px; /* Відстань між колонками */
 }
 /* Галерея з фотографіями */
 .graduates-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    padding-top: 25px;
 }
 
 .photo-card {
@@ -80,6 +81,7 @@
     display: block;
     object-fit: cover; /* якщо у вас різні пропорції зображень */
 }
+
 .photo-card:hover {
     transform: scale(1.5);
 }
@@ -108,19 +110,25 @@
     text-align: justify;
 }
 
-/* Адаптивність */
-@media (max-width: 992px) {
+ /*Адаптивність */
+@media (max-width: 528px) {
     .graduates-list ul {
         column-count: 2;
         column-gap: 20px;
     }
-}
-@media (max-width: 600px) {
-    .graduates-list ul {
-        column-count: 1;
-        column-gap: 0;
+    .graduates-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+        gap: 8px;
+        margin: 8px;
     }
+    .graduates-list li {
+        font-size: 0.8rem;
+        padding-left: 18px;
+    }
+
 }
+
 
 /* Приклад анімації на скрол, якщо у вас є Intersection Observer */
 .animate-on-scroll {

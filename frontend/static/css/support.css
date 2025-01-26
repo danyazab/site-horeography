@@ -39,6 +39,8 @@
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 0 auto; /* Центрування */
+
 }
 
 /* =================================
@@ -76,36 +78,20 @@
 
 /* =================================
    Адаптивність (Media Queries)
-   ================================= */
-/* Планшети та менші пристрої */
-@media (max-width: 992px) {
+/* Контейнер сайту (якщо ще не задано) */
+@media (max-width: 968px) {
     .support-content {
         flex-direction: column;
         align-items: center;
     }
-    .support-text-block, .support-image-block {
-        flex: none;
-        width: 100%;
-    }
-    .support-image-block .support-image {
-        max-width: 70%;
+    .support-text-block,
+    .support-image-block {
+        flex: 0 0 100%;
+        max-width: 100%; /* Запобігання виходу за межі */
     }
 }
 
-/* Телефони */
-@media (max-width: 576px) {
-    .support-page-title {
-        font-size: 2rem;
-    }
-    .support-page-subtitle {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-    .support-image-block .support-image {
-        max-width: 70%;
-    }
-}
-/* Контейнер сайту (якщо ще не задано) */
+
 .container {
     max-width: 1200px;  /* або 1000px, див. що зручніше */
     margin: 0 auto;

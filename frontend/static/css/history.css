@@ -2,8 +2,7 @@
 .history-page .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 80px;
-    padding-bottom: 10px;
+    padding: 20px;
 }
 
 /* Заголовок сторінки */

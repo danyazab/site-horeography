@@ -41,7 +41,7 @@ func ContactHandler(c echo.Context) error {
 
 	// Готуємо текст
 	telegramText := fmt.Sprintf(
-		"Нове повідомлення з форми:\nІм'я: %s\nEmail: %s\nТелефон: %s\nПовідомлення: %s",
+		"❗️ Нове повідомлення з форми:\nІм'я: %s\nEmail: %s\nТелефон: +380%s\nПовідомлення: %s",
 		name, email, phone, message,
 	)
 

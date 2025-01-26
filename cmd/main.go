@@ -2,15 +2,14 @@ package main
 
 import (
 	"fmt"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"html/template"
 	"log"
 	"net/http"
 	"path/filepath"
-	"site-horeography/bot"
-	"site-horeography/handlers"
-
-	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
+	"site-horeography/backend/bot"
+	"site-horeography/backend/handlers"
 )
 
 var tmpl *template.Template
@@ -83,6 +82,12 @@ func adminHandler(c echo.Context) error {
 		"SchoolName": "Львівська Хореографічна Школа",
 		// Можливо, додаткові поля, потрібні для admin.html,
 		// наприклад, список осіб / інформації про адміністрацію.
+		"Phone1":       "+380 (97) 986 49 05",
+		"Phone2":       "+380 (63) 309 32 34",
+		"FacebookURL":  "https://facebook.com/yourpage",
+		"InstagramURL": "https://instagram.com/yourpage",
+		"EmailURL":     "ballet.school.lviv@ukr.net ",
+		"Address":      "м. Львів, вул. Дорошенка 63",
 	}
 
 	err := tmpl.ExecuteTemplate(c.Response().Writer, "admin.html", data)
@@ -97,6 +102,12 @@ func supportHandler(c echo.Context) error {
 		"SchoolName": "Львівська Хореографічна Школа",
 		// Можливо, додаткові поля, потрібні для admin.html,
 		// наприклад, список осіб / інформації про адміністрацію.
+		"Phone1":       "+380 (97) 986 49 05",
+		"Phone2":       "+380 (63) 309 32 34",
+		"FacebookURL":  "https://facebook.com/yourpage",
+		"InstagramURL": "https://instagram.com/yourpage",
+		"EmailURL":     "ballet.school.lviv@ukr.net ",
+		"Address":      "м. Львів, вул. Дорошенка 63",
 	}
 
 	err := tmpl.ExecuteTemplate(c.Response().Writer, "support.html", data)
@@ -111,6 +122,12 @@ func graduatesHandler(c echo.Context) error {
 		"SchoolName": "Львівська Хореографічна Школа",
 		// Можливо, додаткові поля, потрібні для admin.html,
 		// наприклад, список осіб / інформації про адміністрацію.
+		"Phone1":       "+380 (97) 986 49 05",
+		"Phone2":       "+380 (63) 309 32 34",
+		"FacebookURL":  "https://facebook.com/yourpage",
+		"InstagramURL": "https://instagram.com/yourpage",
+		"EmailURL":     "ballet.school.lviv@ukr.net ",
+		"Address":      "м. Львів, вул. Дорошенка 63",
 	}
 
 	err := tmpl.ExecuteTemplate(c.Response().Writer, "graduates.html", data)
@@ -125,6 +142,12 @@ func costEducationHandler(c echo.Context) error {
 		"SchoolName": "Львівська Хореографічна Школа",
 		// Можливо, додаткові поля, потрібні для admin.html,
 		// наприклад, список осіб / інформації про адміністрацію.
+		"Phone1":       "+380 (97) 986 49 05",
+		"Phone2":       "+380 (63) 309 32 34",
+		"FacebookURL":  "https://facebook.com/yourpage",
+		"InstagramURL": "https://instagram.com/yourpage",
+		"EmailURL":     "ballet.school.lviv@ukr.net ",
+		"Address":      "м. Львів, вул. Дорошенка 63",
 	}
 
 	err := tmpl.ExecuteTemplate(c.Response().Writer, "cost-education.html", data)
@@ -138,6 +161,12 @@ func admissionRequirementsHandler(c echo.Context) error {
 		"SchoolName": "Львівська Хореографічна Школа",
 		// Можливо, додаткові поля, потрібні для admin.html,
 		// наприклад, список осіб / інформації про адміністрацію.
+		"Phone1":       "+380 (97) 986 49 05",
+		"Phone2":       "+380 (63) 309 32 34",
+		"FacebookURL":  "https://facebook.com/yourpage",
+		"InstagramURL": "https://instagram.com/yourpage",
+		"EmailURL":     "ballet.school.lviv@ukr.net ",
+		"Address":      "м. Львів, вул. Дорошенка 63",
 	}
 
 	err := tmpl.ExecuteTemplate(c.Response().Writer, "admission-requirements.html", data)
@@ -151,6 +180,12 @@ func educationalProgramsHandler(c echo.Context) error {
 		"SchoolName": "Львівська Хореографічна Школа",
 		// Можливо, додаткові поля, потрібні для admin.html,
 		// наприклад, список осіб / інформації про адміністрацію.
+		"Phone1":       "+380 (97) 986 49 05",
+		"Phone2":       "+380 (63) 309 32 34",
+		"FacebookURL":  "https://facebook.com/yourpage",
+		"InstagramURL": "https://instagram.com/yourpage",
+		"EmailURL":     "ballet.school.lviv@ukr.net ",
+		"Address":      "м. Львів, вул. Дорошенка 63",
 	}
 
 	err := tmpl.ExecuteTemplate(c.Response().Writer, "educational-programs.html", data)
@@ -164,6 +199,12 @@ func historyHandler(c echo.Context) error {
 		"SchoolName": "Львівська Хореографічна Школа",
 		// Можливо, додаткові поля, потрібні для admin.html,
 		// наприклад, список осіб / інформації про адміністрацію.
+		"Phone1":       "+380 (97) 986 49 05",
+		"Phone2":       "+380 (63) 309 32 34",
+		"FacebookURL":  "https://facebook.com/yourpage",
+		"InstagramURL": "https://instagram.com/yourpage",
+		"EmailURL":     "ballet.school.lviv@ukr.net ",
+		"Address":      "м. Львів, вул. Дорошенка 63",
 	}
 
 	err := tmpl.ExecuteTemplate(c.Response().Writer, "history.html", data)
@@ -177,6 +218,12 @@ func structuralDivisionsHandler(c echo.Context) error {
 		"SchoolName": "Львівська Хореографічна Школа",
 		// Можливо, додаткові поля, потрібні для admin.html,
 		// наприклад, список осіб / інформації про адміністрацію.
+		"Phone1":       "+380 (97) 986 49 05",
+		"Phone2":       "+380 (63) 309 32 34",
+		"FacebookURL":  "https://facebook.com/yourpage",
+		"InstagramURL": "https://instagram.com/yourpage",
+		"EmailURL":     "ballet.school.lviv@ukr.net ",
+		"Address":      "м. Львів, вул. Дорошенка 63",
 	}
 
 	err := tmpl.ExecuteTemplate(c.Response().Writer, "structural-divisions.html", data)

@@ -147,3 +147,20 @@ if (form) {
             .catch(err => console.log(err));
     });
 }
+
+<!-- JS для кнопок "Читати детальніше" -->
+document.addEventListener('DOMContentLoaded', function() {
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    readMoreButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const moreText = this.parentElement.querySelector('.admin-more');
+            if (moreText.classList.contains('hidden')) {
+                moreText.classList.remove('hidden');
+                this.textContent = 'Згорнути';
+            } else {
+                moreText.classList.add('hidden');
+                this.textContent = 'Читати детальніше';
+            }
+        });
+    });
+});

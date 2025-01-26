@@ -3,6 +3,7 @@ package bot
 import (
 	"log"
 	"os"
+	"site-horeography/backend/services"
 	"strconv"
 	"strings"
 
@@ -78,6 +79,28 @@ func StartBot() {
 				bot.Send(tgbotapi.NewMessage(chatID, "Це тестова відповідь"))
 
 			default:
+				// Якщо адмін, обробляємо його повідомлення
+				if strings.HasPrefix(text, "/addnews") {
+					// Команда вигляду /addnews <тут-текст-новини>
+					// Відокремлюємо "/addnews " (8 символів + пробіл = 9)
+					// Або розділити за пробілом, якщо треба.
+					parts := strings.SplitN(text, " ", 2)
+					if len(parts) < 2 {
+						// Немає тексту після команди
+						reply := tgbotapi.NewMessage(chatID, "Використання: /addnews Текст новини")
+						bot.Send(reply)
+						continue
+					}
+
+					newsText := parts[1] // Текст після /addnews
+					// Зберігаємо в сховище
+					services.AddNewsItem(newsText)
+
+					// Відповідаємо адміну
+					reply := tgbotapi.NewMessage(chatID, "Новину додано!")
+					bot.Send(reply)
+
+				}
 				// Відповідаємо, що не розуміємо команду
 				bot.Send(tgbotapi.NewMessage(chatID, "Невідома команда. Спробуйте /help"))
 			}
