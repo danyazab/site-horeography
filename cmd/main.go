@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"path/filepath"
+	"site-horeography/bot"
 	"site-horeography/handlers"
 
 	"github.com/labstack/echo/v4"
@@ -22,6 +23,8 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
+	// Запускаємо Телеграм-бота у горутині
+	go bot.StartBot()
 	// Завантажуємо усі .html-шаблони з папки "templates"
 	tmpl = template.Must(template.ParseGlob(filepath.Join("..", "templates", "*.html")))
 
