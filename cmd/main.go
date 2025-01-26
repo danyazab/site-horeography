@@ -25,13 +25,10 @@ func main() {
 	// Запускаємо Телеграм-бота у горутині
 	go bot.StartBot()
 	// Завантажуємо усі .html-шаблони з папки "templates"
-	templatesPath := filepath.Join("..", "..", "templates", "*.html") // Шлях до шаблонів
-	tmpl = template.Must(template.ParseGlob(templatesPath))
+	tmpl = template.Must(template.ParseGlob(filepath.Join("..", "frontend", "templates", "*.html")))
 
 	// Налаштовуємо статичні файли (CSS, JS, зображення тощо)
-	staticPath := filepath.Join("..", "..", "frontend", "static") // Шлях до статичних файлів
-	e.Static("/static", staticPath)
-
+	e.Static("/static", "../frontend/static")
 	// Реєструємо маршрути:
 	e.GET("/", homeHandler)
 
