@@ -27,7 +27,7 @@ func main() {
 
 	// Визначаємо шляхи до статичних файлів і шаблонів
 	templatesPath := filepath.Join("..", "frontend", "templates", "*.html")
-	staticPath := filepath.Join("..", "frontend", "static")
+	staticPath := filepath.Join("..", "frontend")
 
 	// Завантажуємо всі .html шаблони
 	files, err := filepath.Glob(templatesPath)
@@ -43,7 +43,7 @@ func main() {
 		log.Fatalf("Failed to resolve static path: %v", err)
 	}
 	log.Printf("Serving static files from: %s", staticAbsPath)
-	e.Static("/static", staticAbsPath)
+	e.Static("/frontend", staticAbsPath)
 
 	// Реєструємо маршрути
 	e.GET("/", homeHandler)
