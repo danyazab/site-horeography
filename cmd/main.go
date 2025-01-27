@@ -24,17 +24,29 @@ func main() {
 
 	// Запускаємо Телеграм-бота у горутині
 	go bot.StartBot()
-	// Завантажуємо усі .html-шаблони з папки "templates"
-	staticPath, err := filepath.Abs(filepath.Join("frontend", "static"))
+
+	// Визначаємо шляхи до статичних файлів і шаблонів
+	templatesPath := filepath.Join("..", "frontend", "templates", "*.html")
+	staticPath := filepath.Join("..", "frontend", "static")
+
+	// Завантажуємо всі .html шаблони
+	files, err := filepath.Glob(templatesPath)
+	if err != nil || len(files) == 0 {
+		log.Fatalf("No templates found in path: %s", templatesPath)
+	}
+	tmpl = template.Must(template.ParseGlob(templatesPath))
+	log.Printf("Templates loaded from: %s", templatesPath)
+
+	// Налаштування статичних файлів
+	staticAbsPath, err := filepath.Abs(staticPath)
 	if err != nil {
 		log.Fatalf("Failed to resolve static path: %v", err)
 	}
+	log.Printf("Serving static files from: %s", staticAbsPath)
+	e.Static("/static", staticAbsPath)
 
-	log.Printf("Serving static files from: %s", staticPath)
-	e.Static("/static", staticPath)
-	// Реєструємо маршрути:
+	// Реєструємо маршрути
 	e.GET("/", homeHandler)
-
 	e.GET("/administration", adminHandler)
 	e.GET("/support", supportHandler)
 	e.GET("/graduates", graduatesHandler)
@@ -43,14 +55,12 @@ func main() {
 	e.GET("/educational-programs", educationalProgramsHandler)
 	e.GET("/history", historyHandler)
 	e.GET("/structural-divisions", structuralDivisionsHandler)
-	// Processing a form with contacts (POST)
 	e.POST("/contact", handlers.ContactHandler)
 
 	fmt.Println("Сервер запущено на http://localhost:8089")
 	log.Fatal(e.Start(":8089"))
 }
 
-// homeHandler - замість homeHandler(w http.ResponseWriter, r *http.Request)
 func homeHandler(c echo.Context) error {
 	data := map[string]interface{}{
 		"SchoolName": "Львівська Хореографічна Школа",
@@ -65,17 +75,18 @@ func homeHandler(c echo.Context) error {
 		"Phone2":       "+380 (63) 309 32 34",
 		"FacebookURL":  "https://facebook.com/yourpage",
 		"InstagramURL": "https://instagram.com/yourpage",
-		"EmailURL":     "ballet.school.lviv@ukr.net ",
+		"EmailURL":     "ballet.school.lviv@ukr.net",
 		"Address":      "м. Львів, вул. Дорошенка 63",
 	}
 
-	// Рендеримо шаблон home.html
 	err := tmpl.ExecuteTemplate(c.Response().Writer, "home.html", data)
 	if err != nil {
 		return c.String(http.StatusInternalServerError, err.Error())
 	}
 	return nil
 }
+
+// Інші обробники залишаються без змін
 
 // adminHandler - новий маршрут (GET /administration)
 // Приклад рендеру сторінки "Адміністрація" з даними, якщо потрібно
