@@ -13,7 +13,7 @@ footer::after {
     left: 0;
     right: 0;
     height: 100px;
-    background: url('/frontend/staticnd/static/img/wave-footer.svg') no-repeat center bottom;
+    background: url('/frontend/static/img/wave-footer.svg') no-repeat center bottom;
     background-size: cover;
     z-index: -1;
 }
