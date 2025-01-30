@@ -35,7 +35,8 @@ footer::after {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 0 20px;  /* Відступи з боків для мобільних */
+    padding: 50px;
+
 }
 
 .footer-left, .footer-right {
@@ -47,8 +48,10 @@ footer::after {
 .footer-right {
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 20px; /* Відстань між іконками */
+    flex-wrap: nowrap; /* Забороняє переносити іконки вниз */
 }
+
 
 .footer-item {
     display: flex;
@@ -63,13 +66,13 @@ footer::after {
 }
 
 .footer-social-icon {
-    width: 30px;  /* Більший розмір іконок */
-    height: 30px;
+    width: 35px;  /* Більший розмір іконок */
+    height: 35px;
     transition: transform 0.3s ease;  /* Плавний ефект */
 }
 
 .footer-social-icon:hover {
-    transform: scale(1.2);  /* Збільшення при наведенні */
+    transform: scale(1.4);  /* Збільшення при наведенні */
 }
 
 .footer-copy {
@@ -85,29 +88,26 @@ footer::after {
 /* --- Адаптивність для мобільних та планшетів --- */
 @media (max-width: 768px) {
     .footer-content {
-        flex-direction: column;  /* Футер в колону */
+        /*flex-direction: column;  !* Футер в колону *!*/
         align-items: center;
         text-align: center;
+        padding: 50px;
     }
 
     .footer-right {
-        flex-direction: column;
-        gap: 15px;  /* Менший відступ між іконками */
+        /*flex-wrap: wrap; !* Дозволяє переносити, якщо мало місця *!*/
+        justify-content: center;
+        gap: 10px; /* Менший відступ між іконками */
     }
 
     .footer-social-icon {
-        width: 25px;  /* Менший розмір для мобільних */
-        height: 25px;
+        width: 28px;  /* Менший розмір для мобільних */
+        height: 28px;
     }
 }
 
 @media (max-width: 480px) {
     .footer-copy {
         font-size: 10px;
-    }
-
-    .footer-social-icon {
-        width: 20px;  /* Іконки ще менші на дуже вузьких екранах */
-        height: 20px;
     }
 }

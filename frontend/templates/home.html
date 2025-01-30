@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Львівська Державна Хореографічна Школа"/>
+    <meta name="description" content="Львівська Хореографічна Школа"/>
     <title>{{.SchoolName}}</title>
+    <link rel="icon" type="image/x-icon" href="/frontend/static/img/fl.ico">->
+
     <link rel="stylesheet" href="/frontend/static/css/header.css"/>
     <link rel="stylesheet" href="/frontend/static/css/hero.css"/>
     <link rel="stylesheet" href="/frontend/static/css/about.css"/>
@@ -125,7 +127,7 @@
         <img src="/frontend/static/img/ballerina.png" alt="Балерина" class="goal-image"/>
         <h3 class="goal-subtitle">Сприяння всебічному розвитку кожного учня</h3>
         <p class="goal-text">
-            Ми пропонуємо всебічну підготовку, поєднуючи класичну балетну техніку з сучасними танцювальними стилями, що дозволяє нашим учням розвивати не лише фізичні, але й творчі здібності. Наші учні не лише опановують складну танцювальну техніку, але й вчаться працювати в команді, виступати на сцені та досягати поставлених цілей, що є незамінним досвідом для їхнього майбутнього. Заняття балетом з нами сформують у вашої дитини дисципліну, витривалість, почуття ритму та артистизм, що є важливими навичками для будь-якої життєвої сфери.
+            Ми пропонуємо всебічну підготовку, поєднуючи класичну балетну техніку з сучасними танцювальними стилями, що дозволяє учням розвивати не лише фізичні, але й творчі здібності. Наші учні не лише опановують складну танцювальну техніку, але й вчаться працювати в команді, виступати на сцені та досягати поставлених цілей, що є незамінним досвідом для їхнього майбутнього. Заняття балетом з нами сформують у вашої дитини дисципліну, витривалість, почуття ритму та артистизм, що є важливими навичками для будь-якої життєвої сфери.
         </p>
     </div>
 </section>
@@ -174,22 +176,22 @@
 
         <form id="contact-form" method="POST" novalidate>
             <div class="input-container">
-                <input type="text" id="name" name="name" required/>
+                <input type="text" id="name" name="name" required placeholder=" "/>
                 <label class="label" for="name">Ваше ім'я</label>
                 <div class="underline"></div>
             </div>
             <div class="input-container">
-                <input type="email" id="email" name="email" required/>
+                <input type="email" id="email" name="email" required placeholder=" "/>
                 <label class="label" for="email">Ваш email</label>
                 <div class="underline"></div>
             </div>
             <div class="input-container">
-                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Введіть 10 цифр"/>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Введіть 10 цифр" placeholder=" "/>
                 <label class="label" for="phone">Ваш телефон</label>
                 <div class="underline"></div>
             </div>
             <div class="input-container">
-                <textarea id="message" name="message" required></textarea>
+                <textarea id="message" name="message" required placeholder=" "></textarea>
                 <label class="label" for="message">Повідомлення</label>
                 <div class="underline"></div>
             </div>
@@ -200,6 +202,35 @@
         </div>
     </div>
 </section>
+
+
+<section class="partners-section container animate-on-scroll">
+    <h2 class="contacts-subtitle">Партнери</h2>
+    <article class="partner-block">
+        <img
+                src="/frontend/static/img/partners/opera-logo.png"
+                alt="Логотип Львівської національної опери"
+                class="partner-logo"
+        />
+        <div class="partner-text">
+            <h3 class="partner-title">Львівська національна опера</h3>
+            <p>
+                Є нашим незмінним та надійним партнером, з яким ми маємо багаторічну та плідну співпрацю.
+                Наші діти отримують <strong>унікальну можливість</strong> виступати у постановках театру, демонструючи
+                свої таланти та здобуті навички на великій сцені.
+            </p>
+            <ul>
+                <li><strong>Двічі на рік:</strong> організовуємо звітні концерти, які залишають незабутнє враження</li>
+                <li>Співпраця з театром надихає дітей на нові досягнення та допомагає <em>реалізовувати мрії</em></li>
+            </ul>
+            <p>
+                Ми глибоко вдячні Львівській національній опері за підтримку та <strong>спільні проєкти</strong>,
+                які сприяють розвитку нашої молоді та культури загалом.
+            </p>
+        </div>
+    </article>
+</section>
+
 
 <footer class="animate-on-scroll">
     <div class="footer-content">

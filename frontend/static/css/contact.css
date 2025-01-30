@@ -11,8 +11,8 @@
     /*background:url('/static/img/wave-footer.svg') no-repeat center bottom;*/
     /*background-size:cover;*/
     /*background-position:center 100%;*/
-    background: #ffffff; /* Світло-сірий фон */
-    background-image: none; /* Видаляємо хвилю */
+    background: #fff; /* Світло-сірий фон */
+    /*background-image: none; !* Видаляємо хвилю *!*/
 }
 
 .contact-form-section h2 {
@@ -21,7 +21,7 @@
 
 .hints {
     max-width:500px;
-    margin:0 auto;
+    /*margin:0 auto;*/
     font-size:14px;
     color:#666;
     margin-bottom:30px;
@@ -34,51 +34,56 @@
     gap:30px;
     text-align:left;
 }
-
 .input-container {
     position: relative;
 }
+
 .input-container input,
 .input-container textarea {
-    font-size:16px;
-    width:100%;
-    border:none;
-    border-bottom:2px solid #ccc;
-    padding:5px 0;
-    background-color:transparent;
-    outline:none;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
 }
 
 .label {
-    position:absolute;
-    top:0;left:0;
-    color:#ccc;
-    transition:all 0.3s ease;
-    pointer-events:none;
-    font-size:16px;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    color: #ccc;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    font-size: 16px;
 }
+
+/* Підняття мітки при введенні будь-якого тексту */
+input:not(:placeholder-shown) ~ .label,
+textarea:not(:placeholder-shown) ~ .label,
 input:focus ~ .label,
-input:valid ~ .label,
-textarea:focus ~ .label,
-textarea:valid ~ .label {
-    top:-20px;
-    font-size:14px;
-    color:#333;
+textarea:focus ~ .label {
+    top: -20px;
+    font-size: 14px;
+    color: #333;
 }
+
 .underline {
-    position:absolute;
-    bottom:0;left:0;
-    height:2px;width:100%;
-    background-color:#333;
-    transform:scaleX(0);
-    transform-origin:left;
-    transition:transform 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
 }
+
 input:focus ~ .underline,
-input:valid ~ .underline,
-textarea:focus ~ .underline,
-textarea:valid ~ .underline {
-    transform:scaleX(1);
+textarea:focus ~ .underline {
+    transform: scaleX(1);
 }
 
 /* Кнопка "Надіслати" з адаптованими кольорами */
