@@ -95,6 +95,7 @@
     color: #444;
     line-height: 1.6;
 }
+
 .partner-text .partner-title {
     margin-top: 0;
     font-size: 1.1rem;
@@ -103,10 +104,12 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
+
 .partner-text ul {
     margin-left: 1em;
     list-style: disc;
 }
+
 .partner-text ul li {
     margin-bottom: 0.5em;
 }
