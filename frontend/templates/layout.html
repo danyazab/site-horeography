@@ -1,0 +1,40 @@
+{{ define "layout" }}
+  <!DOCTYPE html>
+  <html lang="uk">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Львівська Хореографічна Школа"/>
+    <title>{{.SchoolName}}</title>
+    <link rel="icon" type="image/x-icon" href="/frontend/static/img/fl.ico">
+
+    <!-- Підключаємо стилі -->
+    <link rel="stylesheet" href="/frontend/static/css/header.css"/>
+    <link rel="stylesheet" href="/frontend/static/css/hero.css"/>
+    <link rel="stylesheet" href="/frontend/static/css/about.css"/>
+    <link rel="stylesheet" href="/frontend/static/css/advantages.css"/>
+    <link rel="stylesheet" href="/frontend/static/css/contact.css"/>
+    <link rel="stylesheet" href="/frontend/static/css/footer.css"/>
+    <link rel="stylesheet" href="/frontend/static/css/preloader.css"/>
+    <link rel="stylesheet" href="/frontend/static/css/main.css"/>
+
+    <!-- Підключаємо скрипти -->
+    <script src="/frontend/static/js/main.js" defer></script>
+  </head>
+  <body>
+
+  <!-- Прелоадер (partials/preloader.html) -->
+  {{ template "preloader.html" . }}
+
+  <!-- Хедер (partials/header.html) -->
+  {{ template "header.html" . }}
+
+  <!-- Основний контент (з відповідного файлу в pages/) -->
+  {{ block "content" . }}{{ end }}
+
+  <!-- Футер (partials/footer.html) -->
+  {{ template "footer.html" . }}
+
+  </body>
+  </html>
+{{ end }}

@@ -1,0 +1,36 @@
+{{ define "footer.html" }}
+    <footer class="animate-on-scroll">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-item"></div>
+                <div class="footer-item"></div>
+
+                <div class="footer-item">
+                    <img src="/frontend/static/img/socials/phone.svg" alt="Телефон" class="footer-icon"/>
+                    <span>{{.Phone1}}</span>
+                    <span>{{.Phone2}}</span>
+                </div>
+                <div class="footer-item">
+                    <img src="/frontend/static/img/socials/mail.svg" alt="Email" class="footer-icon"/>
+                    <a href="{{.EmailURL}}">ballet.school.lviv@ukr.net</a>
+                </div>
+                <div class="footer-item">
+                    <img src="/frontend/static/img/socials/location.svg" alt="Адреса" class="footer-icon"/>
+                    <span>{{.Address}}</span>
+                </div>
+            </div>
+            <div class="footer-right">
+                <a href="https://www.facebook.com/Lviv.State.Choreographic.School/?locale=uk_UA"
+                   target="_blank" rel="noopener" class="social-link">
+                    <img src="/frontend/static/img/socials/facebook-icon.svg" alt="Facebook" class="footer-social-icon"/>
+                </a>
+                <a href="https://www.instagram.com/lvivballetschool/" target="_blank" rel="noopener" class="social-link">
+                    <img src="/frontend/static/img/socials/instagram-icon.svg" alt="Instagram" class="footer-social-icon"/>
+                </a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © Державна Хореографічна Школа. Всі права захищено.
+        </div>
+    </footer>
+{{ end }}

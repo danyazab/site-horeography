@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Галерея фотографій Львівської Хореографічної Школи"/>
+  <title>{{.SchoolName}} – Галерея</title>
+
+  <!-- Базові стилі сайту -->
+  <link rel="stylesheet" href="/frontend/static/css/header.css"/>
+  <link rel="stylesheet" href="/frontend/static/css/footer.css"/>
+  <link rel="stylesheet" href="/frontend/static/css/main.css"/>
+
+  <!-- Окремий файл зі стилями для «Галерея» -->
+  <link rel="stylesheet" href="/frontend/static/css/gallery.css"/>
+
+  <!-- Ваш JS (якщо потрібен) -->
+  <script src="/frontend/static/js/main.js" defer></script>
+</head>
+<body>
+<!-- Прелоадер (якщо використовується) -->
+<div class="preloader">
+  <div class="preloader-content">
+    <!-- Ваш SVG-лоадер -->
+  </div>
+</div>
+
+<!-- ШАПКА (header) -->
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <img src="/frontend/static/img/logo.png" alt="Логотип"/>
+    </div>
+    <nav class="main-nav">
+      <button class="mobile-menu-toggle" aria-label="Toggle Menu">≡</button>
+      <ul class="menu">
+        <li class="item has-submenu">
+          <a href="#" class="link">
+            <span>Про школу</span>
+            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 15l-8-8h16z"></path></svg>
+          </a>
+          <div class="submenu">
+            <div class="submenu-item"><a href="#" class="submenu-link">Історія школи</a></div>
+            <div class="submenu-item"><a href="#" class="submenu-link">Структурні підрозділи</a></div>
+            <div class="submenu-item"><a href="#" class="submenu-link">Адміністрація</a></div>
+            <div class="submenu-item"><a href="#" class="submenu-link">Наші випускники</a></div>
+            <div class="submenu-item"><a href="#" class="submenu-link">Підтримка школи</a></div>
+          </div>
+        </li>
+        <li class="item has-submenu">
+          <a href="#" class="link">
+            <span>Навчальний процес</span>
+            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 15l-8-8h16z"></path></svg>
+          </a>
+          <div class="submenu">
+            <div class="submenu-item"><a href="#" class="submenu-link">Освітня програма</a></div>
+            <div class="submenu-item"><a href="#" class="submenu-link">Вартість навчання</a></div>
+            <div class="submenu-item"><a href="#" class="submenu-link">Вимоги до вступу</a></div>
+          </div>
+        </li>
+        <li class="item"><a href="#" class="link"><span>Галерея</span></a></li>
+        <li class="item"><a href="#" class="link"><span>Новини</span></a></li>
+        <li class="item"><a href="#" class="link"><span>Контакти</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- КНОПКИ ДЛЯ МОБІЛЬНОГО МЕНЮ (якщо є) -->
+<button class="scroll-menu-btn">☰</button>
+<div class="menu-overlay"></div>
+<button class="scroll-menu-btn">↑</button>
+
+<!-- ОСНОВНИЙ КОНТЕНТ СТОРІНКИ «Галерея» -->
+<main class="gallery-page animate-on-scroll">
+  <section class="gallery-container container">
+    <h1 class="page-title">Галерея</h1>
+
+    <!-- Другий розділ: Зимові мрії у Львівській опері 2024 -->
+    <div class="gallery-section animate-on-scroll">
+      <h2 class="gallery-section-title">Зимові мрії у Львівській опері 2024</h2>
+      <div class="gallery-grid">
+        <!-- Генерація 30 фото -->
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/2.jpg" alt="Зимові мрії #2"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/3.jpg" alt="Зимові мрії #3"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/4.jpg" alt="Зимові мрії #4"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/5.jpg" alt="Зимові мрії #5"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/6.jpg" alt="Зимові мрії #6"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/7.jpg" alt="Зимові мрії #7"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/8.jpg" alt="Зимові мрії #8"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/10.jpg" alt="Зимові мрії #10"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/12.jpg" alt="Зимові мрії #12"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/13.jpg" alt="Зимові мрії #13"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/14.jpg" alt="Зимові мрії #14"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/15.jpg" alt="Зимові мрії #15"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/16.jpg" alt="Зимові мрії #16"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/17.jpg" alt="Зимові мрії #17"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/18.jpg" alt="Зимові мрії #18"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/19.jpg" alt="Зимові мрії #19"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/20.jpg" alt="Зимові мрії #20"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/22.jpg" alt="Зимові мрії #22"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/23.jpg" alt="Зимові мрії #23"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/24.jpg" alt="Зимові мрії #24"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/25.jpg" alt="Зимові мрії #25"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/26.jpg" alt="Зимові мрії #26"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/28.jpg" alt="Зимові мрії #28"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/29.jpg" alt="Зимові мрії #29"/>
+        </div>
+        <div class="gallery-item animate-on-scroll">
+          <img src="/frontend/static/img/gallery/winter-opera-2024/30.jpg" alt="Зимові мрії #30"/>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Перший розділ: Замойоріло літо танцем 2024 -->
+      <div class="gallery-section">
+        <h2 class="gallery-section-title">Замойоріло літо танцем 2024</h2>
+        <div class="gallery-grid">
+          <!-- Приклад 30 фото. Нижче наведено 5, далі копіюйте і змінюйте src -->
+          <div class="gallery-item">
+            <img src="/frontend/static/img/dancer1.jpg" alt="Замойоріло літо танцем #1"/>
+          </div>
+          <div class="gallery-item">
+            <img src="/static/img/gallery/summer2024-2.jpg" alt="Замойоріло літо танцем #2"/>
+          </div>
+          <div class="gallery-item">
+            <img src="/static/img/gallery/summer2024-3.jpg" alt="Замойоріло літо танцем #3"/>
+          </div>
+          <div class="gallery-item">
+            <img src="/static/img/gallery/summer2024-4.jpg" alt="Замойоріло літо танцем #4"/>
+          </div>
+          <div class="gallery-item">
+            <img src="/static/img/gallery/summer2024-5.jpg" alt="Замойоріло літо танцем #5"/>
+          </div>
+          <!-- ... (додавайте фото до 30) -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- ФУТЕР (footer) -->
+<footer class="animate-on-scroll">
+  <div class="footer-content">
+    <div class="footer-left">
+      <div class="footer-item"></div>
+      <div class="footer-item"></div>
+      <div class="footer-item">
+        <img src="/static/img/socials/phone.svg" alt="Телефон" class="footer-icon"/>
+        <span>{{.Phone1}}</span>
+        <span>{{.Phone2}}</span>
+      </div>
+      <div class="footer-item">
+        <img src="/static/img/socials/mail.svg" alt="Email" class="footer-icon"/>
+        <a href="{{.EmailURL}}">ballet.school.lviv@ukr.net</a>
+      </div>
+      <div class="footer-item">
+        <img src="/static/img/socials/location.svg" alt="Адреса" class="footer-icon"/>
+        <span>{{.Address}}</span>
+      </div>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.facebook.com/Lviv.State.Choreographic.School/?locale=uk_UA" target="_blank" rel="noopener" class="social-link">
+        <img src="/static/img/socials/facebook-icon.svg" alt="Facebook" class="footer-social-icon"/>
+      </a>
+      <a href="https://www.instagram.com/lvivballetschool/" target="_blank" rel="noopener" class="social-link">
+        <img src="/static/img/socials/instagram-icon.svg" alt="Instagram" class="footer-social-icon"/>
+      </a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    © Державна Хореографічна Школа. Всі права захищено.
+  </div>
+</footer>
+</body>
+</html>

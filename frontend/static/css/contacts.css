@@ -60,8 +60,8 @@
 /* Блоки з номерами, email, адресою */
 /* ------------------------------- */
 .partners-section {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 55px;
+    padding-bottom: 55px;
     max-width: 1495px;
     margin: 40px auto;
 
@@ -82,7 +82,7 @@
     transition: transform 0.3s ease;
 }
 .info-block:hover {
-    transform: translateY(-2px);
+    transform: translateY(-6px);
 }
 
 /* Підзаголовки (H2) для блоків (телефон, email, адреса, карта) */

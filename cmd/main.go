@@ -26,15 +26,17 @@ func main() {
 	go bot.StartBot()
 
 	// Визначаємо шляхи до статичних файлів і шаблонів
-	templatesPath := filepath.Join("..", "frontend", "templates", "*.html")
-	staticPath := filepath.Join("..", "frontend")
 
 	// Завантажуємо всі .html шаблони
+	templatesPath := filepath.Join("..", "frontend", "templates", "**", "*.html")
+	staticPath := filepath.Join("..", "frontend")
+
+	// Завантажуємо всі .html файли (layout, partials, pages)
 	files, err := filepath.Glob(templatesPath)
 	if err != nil || len(files) == 0 {
 		log.Fatalf("No templates found in path: %s", templatesPath)
 	}
-	tmpl = template.Must(template.ParseGlob(templatesPath))
+	tmpl = template.Must(template.ParseFiles(files...))
 	log.Printf("Templates loaded from: %s", templatesPath)
 
 	// Налаштування статичних файлів
@@ -62,6 +64,13 @@ func main() {
 	fmt.Println("Сервер запущено на http://localhost:8089")
 	log.Fatal(e.Start(":8089"))
 }
+func executeTemplate(c echo.Context, tmplName string, data interface{}) error {
+	err := tmpl.ExecuteTemplate(c.Response().Writer, tmplName, data)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	return nil
+}
 
 func homeHandler(c echo.Context) error {
 	data := map[string]interface{}{
@@ -81,11 +90,8 @@ func homeHandler(c echo.Context) error {
 		"Address":      "м. Львів, вул. Дорошенка 63",
 	}
 
-	err := tmpl.ExecuteTemplate(c.Response().Writer, "home.html", data)
-	if err != nil {
-		return c.String(http.StatusInternalServerError, err.Error())
-	}
-	return nil
+	return executeTemplate(c, "home.html", data)
+
 }
 
 // Інші обробники залишаються без змін
@@ -105,11 +111,7 @@ func adminHandler(c echo.Context) error {
 		"Address":      "м. Львів, вул. Дорошенка 63",
 	}
 
-	err := tmpl.ExecuteTemplate(c.Response().Writer, "admin.html", data)
-	if err != nil {
-		return c.String(http.StatusInternalServerError, err.Error())
-	}
-	return nil
+	return executeTemplate(c, "admin.html", data)
 }
 
 func supportHandler(c echo.Context) error {
@@ -125,11 +127,7 @@ func supportHandler(c echo.Context) error {
 		"Address":      "м. Львів, вул. Дорошенка 63",
 	}
 
-	err := tmpl.ExecuteTemplate(c.Response().Writer, "support.html", data)
-	if err != nil {
-		return c.String(http.StatusInternalServerError, err.Error())
-	}
-	return nil
+	return executeTemplate(c, "support.html", data)
 }
 
 func graduatesHandler(c echo.Context) error {

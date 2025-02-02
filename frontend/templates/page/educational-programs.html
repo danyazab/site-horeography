@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Львівська Державна Хореографічна Школа"/>
+    <title>{{.SchoolName}} – Освітні програми</title>
+
+    <!-- Підключення базових стилів сайту (header, footer, main) -->
+    <link rel="stylesheet" href="/frontend/static/css/header.css"/>
+    <link rel="stylesheet" href="/frontend/static/css/footer.css"/>
+    <link rel="stylesheet" href="/frontend/static/css/main.css"/>
+
+    <!-- Окремий файл стилів для сторінки «Освітні програми» -->
+    <link rel="stylesheet" href="/frontend/static/css/educational-programs.css"/>
+
+    <!-- Скрипти (якщо є) -->
+    <script src="/frontend/static/js/main.js" defer></script>
+</head>
+<body>
+<!-- Прелоадер (якщо використовується) -->
+<div class="preloader">
+    <div class="preloader-content">
+        <!-- Ваш SVG-лоадер -->
+    </div>
+</div>
+
+<!-- Шапка сайту (header) -->
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo">
+            <img src="/frontend/static/img/logo.png" alt="Логотип"/>
+        </div>
+        <nav class="main-nav">
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">≡</button>
+
+            <ul class="menu">
+                <li class="item"><a href="/" class="link"><span>Головна</span></a></li>
+                <li class="item has-submenu">
+                    <a href="/" class="link">
+                        <span>Про школу</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 15l-8-8h16z"></path></svg>
+                    </a>
+                    <div class="submenu">
+                        <div class="submenu-item"><a href="/history" class="submenu-link">Історія школи</a></div>
+                        <div class="submenu-item"><a href="/structural-divisions" class="submenu-link">Структурні підрозділи</a></div>
+                        <div class="submenu-item"><a href="/administration" class="submenu-link">Адміністрація</a></div>
+                        <div class="submenu-item"><a href="/graduates" class="submenu-link">Наші випускники</a></div>
+                        <div class="submenu-item"><a href="/support" class="submenu-link">Підтримка школи</a></div>
+                    </div>
+                </li>
+                <li class="item has-submenu">
+                    <a href="#" class="link">
+                        <span>Навчальний процес</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 15l-8-8h16z"></path></svg>
+                    </a>
+                    <div class="submenu">
+                        <div class="submenu-item"><a href="/educational-programs" class="submenu-link">Освітня програма</a></div>
+                        <div class="submenu-item"><a href="/cost-education" class="submenu-link">Вартість навчання</a></div>
+                        <div class="submenu-item"><a href="/admission-requirements" class="submenu-link">Вимоги до вступу</a></div>
+                    </div>
+                </li>
+                <li class="item"><a href="#" class="link"><span>Галерея</span></a></li>
+                <li class="item"><a href="#" class="link"><span>Новини</span></a></li>
+                <li class="item"><a href="#" class="link"><span>Контакти</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- КНОПКИ ДЛЯ МОБІЛЬНОГО МЕНЮ (якщо потрібно) -->
+<button class="scroll-menu-btn">☰</button>
+<div class="menu-overlay"></div>
+<button class="scroll-menu-btn">↑</button>
+
+<!-- ОСНОВНИЙ КОНТЕНТ СТОРІНКИ «Освітні програми» -->
+<main class="educational-programs-page animate-on-scroll">
+    <section class="container">
+        <h1 class="page-title">Освітні програми</h1>
+        <p class="intro-text">
+            Ми пропонуємо широкий спектр освітніх програм, спрямованих на розвиток професійних навичок у сфері хореографії.
+            Обирайте програму, що відповідає вашим інтересам, та ознайомтеся з деталями, натиснувши на відповідний документ.
+        </p>
+
+        <!-- Галерея файлів (3 .doc) -->
+        <div class="programs-gallery">
+            <!-- Приклад 1 -->
+            <div class="program-card">
+                <img src="/frontend/static/img/socials/doc-icon.svg" alt="Документ .doc" class="program-icon"/>
+                <h2 class="program-title">Програма "КЛАС ТАНЦЮ"</h2>
+                <h2 class="program-title2"> «елементарного підрівня початкової мистецької освіти»</h2>
+                <p class="program-description">
+                    Опанування програми дає можливість: Застосовувати набуті в процесі навчання компетентності в своєму
+                    повсякденному житті, а також, продовжити здобуття початкової хореографічної освіти на середньому (базовому)
+                    підрівні початкової мистецької освіти загальномистецького або початкового професійного спрямування.
+                </p>
+                <!-- Посилання на документ (відкриття/завантаження) -->
+                <a
+                        href="/frontend/static/docs/Освітня_програма_елементарного_рівня.docx"
+                        target="_blank"
+                        class="program-link"
+                        rel="noopener"
+                >
+                    Переглянути .doc
+                </a>
+            </div>
+
+            <!-- Приклад 2 -->
+            <div class="program-card">
+                <img src="/frontend/static/img/socials/doc-icon.svg" alt="Документ .doc" class="program-icon"/>
+                <h2 class="program-title">Програма "Клас Сучасного танцю"</h2>
+                <h2 class="program-title2"> «середнього (базового) підрівня початкової мистецької освіти»</h2>
+                <p class="program-description">
+                    Опанування програми дає можливість: Продовжити подальше здобуття мистецької освіти професійного
+                    спрямування з хореографічного мистецтва в системі фахової передвищої освіти або на поглибленому підрівні початкової хореографічної освіти.
+                </p>
+                <a
+                        href="/frontend/static/docs/Освітня_програма_сучасний_танець.docx"
+                        target="_blank"
+                        class="program-link"
+                        rel="noopener"
+                >
+                    Переглянути .doc
+                </a>
+            </div>
+
+            <!-- Приклад 3 -->
+            <div class="program-card">
+                <img src="/frontend/static/img/socials/doc-icon.svg" alt="Документ .doc" class="program-icon"/>
+                <h2 class="program-title">Програма "Клас Класичного танцю "</h2>
+                <h2 class="program-title2"> «середнього (базового) підрівня початкової мистецької освіти</h2>
+                <p class="program-description">
+                    Опанування програми дає можливість: Продовжити подальше здобуття мистецької освіти професійного спрямування
+                    з хореографічного мистецтва в системі фахової передвищої освіти або на поглибленому підрівні початкової хореографічної освіти.
+                </p>
+                <a
+                        href="/frontend/static/docs/Освітня_програма_середній_базовий_рівень.docx"
+                        target="_blank"
+                        class="program-link"
+                        rel="noopener"
+                >
+                    Переглянути .doc
+                </a>
+            </div>
+        </div>
+
+        <!-- Завершальний блок -->
+        <p class="closing-text">
+            Вибирайте програму, яка найкраще відповідає вашим цілям, і приєднуйтеся до
+            дружної спільноти наших талановитих учнів!
+        </p>
+    </section>
+</main>
+
+<!-- ФУТЕР (footer) -->
+<footer class="animate-on-scroll">
+    <div class="footer-content">
+        <div class="footer-left">
+            <div class="footer-item"></div>
+            <div class="footer-item"></div>
+            <div class="footer-item">
+                <img src="/frontend/static/img/socials/phone.svg" alt="Телефон" class="footer-icon"/>
+                <span>{{.Phone1}}</span>
+                <span>{{.Phone2}}</span>
+            </div>
+            <div class="footer-item">
+                <img src="/frontend/static/img/socials/mail.svg" alt="Email" class="footer-icon"/>
+                <a href="{{.EmailURL}}">ballet.school.lviv@ukr.net</a>
+            </div>
+            <div class="footer-item">
+                <img src="/frontend/static/img/socials/location.svg" alt="Адреса" class="footer-icon"/>
+                <span>{{.Address}}</span>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="https://www.facebook.com/Lviv.State.Choreographic.School/?locale=uk_UA" target="_blank" rel="noopener" class="social-link">
+                <img src="/frontend/static/img/socials/facebook-icon.svg" alt="Facebook" class="footer-social-icon"/>
+            </a>
+            <a href="https://www.instagram.com/lvivballetschool/" target="_blank" rel="noopener" class="social-link">
+                <img src="/frontend/static/img/socials/instagram-icon.svg" alt="Instagram" class="footer-social-icon"/>
+            </a>
+        </div>
+    </div>
+    <div class="footer-copy">
+        © Державна Хореографічна Школа. Всі права захищено.
+    </div>
+</footer>
+
+</body>
+</html>

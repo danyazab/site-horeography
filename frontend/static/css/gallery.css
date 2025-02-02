@@ -1,0 +1,88 @@
+/* СТИЛІ ДЛЯ СТОРІНКИ «ГАЛЕРЕЯ» */
+
+/* Контейнер для всієї галереї */
+.gallery-page .gallery-container {
+  background-color: #F5FFFA;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Заголовок сторінки */
+.page-title {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+/* Кожен розділ (літній, зимовий) */
+.gallery-section {
+  margin-bottom: 40px;
+}
+.gallery-section-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  color: #67399a; /* акцентний колір */
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  transition:all 300ms cubic-bezier(.23,1,0.32,1);
+  font-family:Arial,sans-serif;
+
+}
+
+/* Сітка фото */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Кожне фото */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Зображення */
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition:opacity 0.4s ease,transform 0.4s ease;
+}
+
+.gallery-item.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+.gallery-item:hover {
+  transform:scale(1.05) !important;
+  box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+/* Ефект масштабування при hover */
+.gallery-item:hover img {
+  transform: scale(1.3);
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .gallery-section-title {
+    font-size: 1.5rem;
+  }
+  .gallery-grid {
+    gap: 15px;
+  }
+  .gallery-item {
+    border-radius: 3px;
+  }
+}
