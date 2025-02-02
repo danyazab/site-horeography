@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Львівська Державна Хореографічна Школа"/>
-    <title>{{.SchoolName}} – Освітні програми</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Останні новини від Львівської Хореографічної Школи">
+    <title>{{.SchoolName}} – Новини</title>
 
-    <!-- Підключення базових стилів сайту (header, footer, main) -->
+    <!-- Базові стилі сайту -->
     <link rel="stylesheet" href="/frontend/static/css/header.css"/>
     <link rel="stylesheet" href="/frontend/static/css/footer.css"/>
     <link rel="stylesheet" href="/frontend/static/css/main.css"/>
 
-    <!-- Окремий файл стилів для сторінки «Освітні програми» -->
-    <link rel="stylesheet" href="/frontend/static/css/educational-programs.css"/>
+    <!-- Окремий файл стилів для сторінки «Новини» -->
+    <link rel="stylesheet" href="/frontend/static/css/news.css"/>
 
-    <!-- Скрипти (якщо є) -->
+    <!-- Ваш JS (якщо потрібен) -->
     <script src="/frontend/static/js/main.js" defer></script>
 </head>
 <body>
@@ -59,8 +59,8 @@
         </div>
     </div>
 </div>
-<!-- Шапка сайту (header) -->
-<header class="main-header">
+
+<<header class="main-header">
     <div class="header-container">
         <div class="logo">
             <img src="/frontend/static/img/logo.png" alt="Логотип" />
@@ -101,87 +101,93 @@
     </div>
 </header>
 
-<!-- КНОПКИ ДЛЯ МОБІЛЬНОГО МЕНЮ (якщо потрібно) -->
+<!-- КНОПКИ ДЛЯ МОБІЛЬНОГО МЕНЮ (якщо потрібні) -->
 <button class="scroll-menu-btn">☰</button>
 <div class="menu-overlay"></div>
 <button class="scroll-menu-btn">↑</button>
 
-<!-- ОСНОВНИЙ КОНТЕНТ СТОРІНКИ «Освітні програми» -->
-<main class="educational-programs-page animate-on-scroll">
-    <section class="container">
-        <h1 class="page-title">Освітні програми</h1>
-        <p class="intro-text">
-            Ми пропонуємо широкий спектр освітніх програм, спрямованих на розвиток професійних навичок у сфері хореографії.
-            Обирайте програму, що відповідає вашим інтересам, та ознайомтеся з деталями, натиснувши на відповідний документ.
-        </p>
+<!-- ОСНОВНИЙ КОНТЕНТ СТОРІНКИ «Новини» -->
+<main class="news-page animate-on-scroll">
+    <section class="news-container container">
+        <h1 class="page-title">Новини</h1>
 
-        <!-- Галерея файлів (3 .doc) -->
-        <div class="programs-gallery">
-            <!-- Приклад 1 -->
-            <div class="program-card">
-                <img src="/frontend/static/img/socials/doc-icon.svg" alt="Документ .doc" class="program-icon"/>
-                <h2 class="program-title">Програма "КЛАС ТАНЦЮ"</h2>
-                <h2 class="program-title2"> «елементарного підрівня початкової мистецької освіти»</h2>
-                <p class="program-description">
-                    Опанування програми дає можливість: Застосовувати набуті в процесі навчання компетентності в своєму
-                    повсякденному житті, а також, продовжити здобуття початкової хореографічної освіти на середньому (базовому)
-                    підрівні початкової мистецької освіти загальномистецького або початкового професійного спрямування.
-                </p>
-                <!-- Посилання на документ (відкриття/завантаження) -->
-                <a
-                        href="/frontend/static/docs/Освітня_програма_елементарного_рівня.docx"
-                        target="_blank"
-                        class="program-link"
-                        rel="noopener"
-                >
-                    Переглянути .doc
-                </a>
+        <!-- Заголовок, дата, невеликий вступ -->
+        <article class="news-article">
+            <p class="news-date">8 червня 2024 року, Львівська національна опера</p>
+            <h2 class="news-title">Дитячий балет «У світі казок» чарує глядачів</h2>
+
+            <!-- Блок тексту, розбитий на підзаголовки -->
+            <h3 class="news-subheading">Прем’єра дитячого балету</h3>
+            <p>
+                Ця постановка, виконана учнями нашої школи, стала справжнім святом для шанувальників мистецтва танцю та казки.
+                Балет «У світі казок» розповідає захопливу історію про пригоди юних героїв, які потрапляють до чарівного світу.
+                На сцені оживають улюблені персонажі з відомих історій, а глядачі поринають в атмосферу дива та фантазії.
+            </p>
+            <p>
+                Вистава вражає не лише чудовою хореографією, але й барвистими костюмами, мальовничими декораціями та
+                чаруючою музикою. Учні школи у своїх малюнках створили власні візуальні образи казкового світу, які
+                потім були втілені у декораціях. Це додало виставі особливої теплоти, адже на сцені оживали не лише
+                мрії героїв, але й творчі фантазії дітей.
+            </p>
+
+            <h3 class="news-subheading">Творчий задум і постановка</h3>
+            <p>
+                Юні танцюристи з легкістю та витонченістю втілили образи казкових персонажів, даруючи глядачам
+                незабутні враження. Автор ідеї вистави – директор школи <strong>Віталій Рижий</strong>. Завдяки його
+                творчому задуму та натхненню народився цей чудовий проєкт, що об’єднав у собі світ казки, дитячу
+                фантазію та мистецтво танцю.
+            </p>
+            <p>
+                <strong>Балетмейстер-постановник</strong>, заслужений артист України <strong>Сергій Наєнко</strong>
+                зумів майстерно втілити ідею автора на сцені, створивши захопливу й емоційну хореографію,
+                яка підкорила серця глядачів.
+            </p>
+            <p>
+                «У світі казок» – це не просто балет, а справжня казка, яка оживає на сцені. Вистава подарувала
+                позитивні емоції та віру в дива дорослим і дітям.
+            </p>
+
+            <!-- Галерея (5 фото) -->
+            <h3 class="news-subheading">Фото з прем’єри</h3>
+            <div class="news-gallery">
+                <!-- Приклад 5 зображень (замініть src на свої) -->
+                <figure class="news-gallery-item">
+                    <img src="/frontend/static/img/news/foto1.jpg" alt="У світі казок #1"/>
+                </figure>
+                <figure class="news-gallery-item">
+                    <img src="/frontend/static/img/news/foto2.jpg" alt="У світі казок #2"/>
+                </figure>
+                <figure class="news-gallery-item">
+                    <img src="/frontend/static/img/news/foto3.jpg" alt="У світі казок #3"/>
+                </figure>
+                <figure class="news-gallery-item">
+                    <img src="/frontend/static/img/news/foto4.jpg" alt="У світі казок #4"/>
+                </figure>
+                <figure class="news-gallery-item">
+                    <img src="/frontend/static/img/news/foto5.jpg" alt="У світі казок #5"/>
+                </figure>
             </div>
 
-            <!-- Приклад 2 -->
-            <div class="program-card">
-                <img src="/frontend/static/img/socials/doc-icon.svg" alt="Документ .doc" class="program-icon"/>
-                <h2 class="program-title">Програма "Клас Сучасного танцю"</h2>
-                <h2 class="program-title2"> «середнього (базового) підрівня початкової мистецької освіти»</h2>
-                <p class="program-description">
-                    Опанування програми дає можливість: Продовжити подальше здобуття мистецької освіти професійного
-                    спрямування з хореографічного мистецтва в системі фахової передвищої освіти або на поглибленому підрівні початкової хореографічної освіти.
-                </p>
-                <a
-                        href="/frontend/static/docs/Освітня_програма_сучасний_танець.docx"
-                        target="_blank"
-                        class="program-link"
-                        rel="noopener"
-                >
-                    Переглянути .doc
-                </a>
-            </div>
-
-            <!-- Приклад 3 -->
-            <div class="program-card">
-                <img src="/frontend/static/img/socials/doc-icon.svg" alt="Документ .doc" class="program-icon"/>
-                <h2 class="program-title">Програма "Клас Класичного танцю "</h2>
-                <h2 class="program-title2"> «середнього (базового) підрівня початкової мистецької освіти</h2>
-                <p class="program-description">
-                    Опанування програми дає можливість: Продовжити подальше здобуття мистецької освіти професійного спрямування
-                    з хореографічного мистецтва в системі фахової передвищої освіти або на поглибленому підрівні початкової хореографічної освіти.
-                </p>
-                <a
-                        href="/frontend/static/docs/Освітня_програма_середній_базовий_рівень.docx"
-                        target="_blank"
-                        class="program-link"
-                        rel="noopener"
-                >
-                    Переглянути .doc
-                </a>
-            </div>
-        </div>
-
-        <!-- Завершальний блок -->
-        <p class="closing-text">
-            Вибирайте програму, яка найкраще відповідає вашим цілям, і приєднуйтеся до
-            дружної спільноти наших талановитих учнів!
-        </p>
+            <h3 class="news-subheading">Відгуки глядачів</h3>
+            <ul class="news-feedback-list">
+                <li>
+                    <strong>Ангеліна Савицька, мама учениці:</strong> «Це неймовірна вистава! Ми були у захваті
+                    від танців, костюмів та декорацій. Особливо вразили малюнки учнів, які ожили на сцені.
+                    Дуже оригінальна ідея!»
+                </li>
+                <li>
+                    <strong>п. Олена, глядач:</strong> «Балет "У світі казок" – це справжня казка, яка оживає на сцені.
+                    Це чудова можливість для дітей познайомитися з класичною музикою та танцем.»
+                </li>
+                <li>
+                    <strong>Ірина Марчиха, мама учениці:</strong> «Дуже круто було, я ще досі вдивляюся в декорації, супер молодці!»
+                </li>
+                <li>
+                    <strong>п. Марія, глядачка:</strong> «Я в захваті від вистави! Це було дуже красиво, емоційно та професійно.
+                    Дякую всім, хто створив цю чудову казку!»
+                </li>
+            </ul>
+        </article>
     </section>
 </main>
 
@@ -218,6 +224,5 @@
         © Державна Хореографічна Школа. Всі права захищено.
     </div>
 </footer>
-
 </body>
 </html>

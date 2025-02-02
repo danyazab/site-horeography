@@ -59,6 +59,8 @@ func main() {
 	e.GET("/structural-divisions", structuralDivisionsHandler)
 
 	e.GET("/contact", contactHandler)
+	e.GET("/news", contactNews)
+	e.GET("/gallery", contactGallery)
 	e.POST("/form-contact", handlers.ContactHandler)
 
 	fmt.Println("Сервер запущено на http://localhost:8089")
@@ -260,6 +262,46 @@ func contactHandler(c echo.Context) error {
 	}
 
 	err := tmpl.ExecuteTemplate(c.Response().Writer, "contact.html", data)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	return nil
+}
+
+func contactNews(c echo.Context) error {
+	data := map[string]interface{}{
+		"SchoolName": "Львівська Хореографічна Школа",
+		// Можливо, додаткові поля, потрібні для admin.html,
+		// наприклад, список осіб / інформації про адміністрацію.
+		"Phone1":       "+380 (97) 986 49 05",
+		"Phone2":       "+380 (63) 309 32 34",
+		"FacebookURL":  "https://facebook.com/yourpage",
+		"InstagramURL": "https://instagram.com/yourpage",
+		"EmailURL":     "ballet.school.lviv@ukr.net ",
+		"Address":      "м. Львів, вул. Дорошенка 63",
+	}
+
+	err := tmpl.ExecuteTemplate(c.Response().Writer, "news.html", data)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	return nil
+}
+
+func contactGallery(c echo.Context) error {
+	data := map[string]interface{}{
+		"SchoolName": "Львівська Хореографічна Школа",
+		// Можливо, додаткові поля, потрібні для admin.html,
+		// наприклад, список осіб / інформації про адміністрацію.
+		"Phone1":       "+380 (97) 986 49 05",
+		"Phone2":       "+380 (63) 309 32 34",
+		"FacebookURL":  "https://facebook.com/yourpage",
+		"InstagramURL": "https://instagram.com/yourpage",
+		"EmailURL":     "ballet.school.lviv@ukr.net ",
+		"Address":      "м. Львів, вул. Дорошенка 63",
+	}
+
+	err := tmpl.ExecuteTemplate(c.Response().Writer, "gallery.html", data)
 	if err != nil {
 		return c.String(http.StatusInternalServerError, err.Error())
 	}
