@@ -164,33 +164,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM завантажено, викликаємо loadHTML...");
-
-    async function loadHTML(containerId, filePath) {
-        console.log(`Спроба завантажити ${filePath} в #${containerId}`);
-
-        try {
-            const response = await fetch(filePath);
-            if (!response.ok) throw new Error(`Помилка завантаження ${filePath}: ${response.statusText}`);
-
-            const html = await response.text();
-            const container = document.getElementById(containerId);
-
-            if (container) {
-                container.innerHTML = html;
-                console.log(`✅ Успішно завантажено ${filePath} у #${containerId}`);
-            } else {
-                console.error(`❌ Контейнер #${containerId} не знайдено`);
-            }
-        } catch (error) {
-            console.error("❌ Помилка завантаження:", error);
-        }
-    }
-
-    // ОЯВНО ВИКЛИКАЄМО ФУНКЦІЮ
-    loadHTML("header", "/frontend/partials/header.html");
-    loadHTML("preloader", "/frontend/partials/preloader.html");
-    loadHTML("footer", "/frontend/partials/footer.html");
-});
