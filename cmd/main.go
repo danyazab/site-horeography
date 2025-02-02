@@ -30,7 +30,7 @@ func main() {
 	staticPath := filepath.Join("..", "frontend")
 
 	// Завантажуємо всі .html шаблони
-	files, err := filepath.Glob(templatesPath)
+	files, err := filepath.Glob("./frontend/templates/*.html")
 	if err != nil || len(files) == 0 {
 		log.Fatalf("No templates found in path: %s", templatesPath)
 	}
@@ -55,7 +55,9 @@ func main() {
 	e.GET("/educational-programs", educationalProgramsHandler)
 	e.GET("/history", historyHandler)
 	e.GET("/structural-divisions", structuralDivisionsHandler)
-	e.POST("/contact", handlers.ContactHandler)
+
+	e.GET("/contact", contactHandler)
+	e.POST("/form-contact", handlers.ContactHandler)
 
 	fmt.Println("Сервер запущено на http://localhost:8089")
 	log.Fatal(e.Start(":8089"))
@@ -240,6 +242,26 @@ func structuralDivisionsHandler(c echo.Context) error {
 	}
 
 	err := tmpl.ExecuteTemplate(c.Response().Writer, "structural-divisions.html", data)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, err.Error())
+	}
+	return nil
+}
+
+func contactHandler(c echo.Context) error {
+	data := map[string]interface{}{
+		"SchoolName": "Львівська Хореографічна Школа",
+		// Можливо, додаткові поля, потрібні для admin.html,
+		// наприклад, список осіб / інформації про адміністрацію.
+		"Phone1":       "+380 (97) 986 49 05",
+		"Phone2":       "+380 (63) 309 32 34",
+		"FacebookURL":  "https://facebook.com/yourpage",
+		"InstagramURL": "https://instagram.com/yourpage",
+		"EmailURL":     "ballet.school.lviv@ukr.net ",
+		"Address":      "м. Львів, вул. Дорошенка 63",
+	}
+
+	err := tmpl.ExecuteTemplate(c.Response().Writer, "contact.html", data)
 	if err != nil {
 		return c.String(http.StatusInternalServerError, err.Error())
 	}

@@ -152,7 +152,7 @@ span.admin-more.hidden p, span.admin-more.hidden ul {
     /* transition, щоб робити плавне розгортання/згортання */
     transition: all 0.3s ease;
     opacity: 1;
-    max-height: 999px; /* тимчасово велике значення */
+    /*max-height: 999px; !* тимчасово велике значення *!*/
     overflow: hidden;
 }
 .hidden {

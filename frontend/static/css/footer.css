@@ -1,6 +1,6 @@
 footer {
     position: relative;
-    padding: 60px 0 100px;
+    padding: 50px 0 80px;
     margin: 5px;
     background-color: #ffffff;
     overflow: hidden;
@@ -12,7 +12,7 @@ footer::after {
     position: absolute;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 70px;
     background: url('/frontend/static/img/wave-footer.svg') no-repeat center bottom;
     background-size: cover;
     z-index: -1;
@@ -66,8 +66,8 @@ footer::after {
 }
 
 .footer-social-icon {
-    width: 35px;  /* Більший розмір іконок */
-    height: 35px;
+    width: 38px;  /* Більший розмір іконок */
+    height: 38px;
     transition: transform 0.3s ease;  /* Плавний ефект */
 }
 
@@ -101,13 +101,17 @@ footer::after {
     }
 
     .footer-social-icon {
-        width: 28px;  /* Менший розмір для мобільних */
-        height: 28px;
+        width: 33px;  /* Менший розмір для мобільних */
+        height: 33px;
     }
 }
 
 @media (max-width: 480px) {
     .footer-copy {
         font-size: 10px;
+    }
+    .footer-social-icon {
+        width: 28px;  /* Менший розмір для мобільних */
+        height: 28px;
     }
 }
