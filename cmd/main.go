@@ -30,7 +30,7 @@ func main() {
 	staticPath := filepath.Join("..", "frontend")
 
 	// Завантажуємо всі .html шаблони
-	files, err := filepath.Glob("./frontend/templates/*.html")
+	files, err := filepath.Glob(templatesPath)
 	if err != nil || len(files) == 0 {
 		log.Fatalf("No templates found in path: %s", templatesPath)
 	}
