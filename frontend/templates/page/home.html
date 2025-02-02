@@ -1,22 +1,21 @@
 {{ define "home.html" }}
-    {{ template "layout" . }}    <!-- Викликаємо "layout", щоб застосувати розмітку -->
+    {{ template "layout" .}}
+{{ end }}
 
-    {{ define "content" }}
-        <!-- Весь контент, який у вас був між <body> ... </body>,
-             крім прелоадера, хедера і футера, які вже винесені -->
-
-<section class="hero animate-on-scroll">
-    <div class="slider-container">
-        <div class="slide fade" style="background-image: url('/frontend/static/img/dancer1.jpg');"></div>
-        <div class="slide fade" style="background-image: url('/frontend/static/img/dancer2.jpg');"></div>
-        <div class="slide fade" style="background-image: url('/frontend/static/img/dancer3.jpg');"></div>
-        <div class="slide fade" style="background-image: url('/frontend/static/img/dancer4.jpg');"></div>
-    </div>
-    <div class="hero-text">
-        <h1>{{.SchoolName}}</h1>
-        <p>{{.Quote}}</p>
-    </div>
-</section>
+{{ define "content" }}
+    <!-- Увесь унікальний контент головної сторінки -->
+    <section class="hero animate-on-scroll">
+        <div class="slider-container">
+            <div class="slide fade" style="background-image: url('/frontend/static/img/dancer1.jpg');"></div>
+            <div class="slide fade" style="background-image: url('/frontend/static/img/dancer2.jpg');"></div>
+            <div class="slide fade" style="background-image: url('/frontend/static/img/dancer3.jpg');"></div>
+            <div class="slide fade" style="background-image: url('/frontend/static/img/dancer4.jpg');"></div>
+        </div>
+        <div class="hero-text">
+            <h1>{{.SchoolName}}</h1>
+            <p>{{.Quote}}</p>
+        </div>
+    </section>
 
 <section class="about-goal animate-on-scroll">
     <div class="container">
@@ -127,7 +126,4 @@
         </div>
     </article>
 </section>
-            
-    {{ end }}
-
 {{ end }}

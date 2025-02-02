@@ -2,13 +2,14 @@
   <!DOCTYPE html>
   <html lang="uk">
   <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="Львівська Хореографічна Школа"/>
-    <title>{{.SchoolName}}</title>
-    <link rel="icon" type="image/x-icon" href="/frontend/static/img/fl.ico">
 
-    <!-- Підключаємо стилі -->
+    <title>{{.SchoolName}}</title>
+    <link rel="icon" type="image/x-icon" href="/frontend/static/img/fl.ico"/>
+
+    <!-- Підключення всіх стилів -->
     <link rel="stylesheet" href="/frontend/static/css/header.css"/>
     <link rel="stylesheet" href="/frontend/static/css/hero.css"/>
     <link rel="stylesheet" href="/frontend/static/css/about.css"/>
@@ -18,21 +19,21 @@
     <link rel="stylesheet" href="/frontend/static/css/preloader.css"/>
     <link rel="stylesheet" href="/frontend/static/css/main.css"/>
 
-    <!-- Підключаємо скрипти -->
+    <!-- Підключення скриптів -->
     <script src="/frontend/static/js/main.js" defer></script>
   </head>
   <body>
 
-  <!-- Прелоадер (partials/preloader.html) -->
+  <!-- Прелоадер -->
   {{ template "preloader.html" . }}
 
-  <!-- Хедер (partials/header.html) -->
+  <!-- Хедер (меню) -->
   {{ template "header.html" . }}
 
-  <!-- Основний контент (з відповідного файлу в pages/) -->
+  <!-- Контент сторінки, який визначається у файлах з pages/ -->
   {{ block "content" . }}{{ end }}
 
-  <!-- Футер (partials/footer.html) -->
+  <!-- Футер -->
   {{ template "footer.html" . }}
 
   </body>
